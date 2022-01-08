@@ -48,7 +48,7 @@ through the following ways:
   example, these could include your name, emails & other relevant contact
   information to receive personalized content delivered to your inbox.
 - Passive means wherein third party tools like Google Analytics, Google Search
-  Console, Cloudflare Analytics, Twitter Analytics, etc collect the personal
+  Console, Cloudflare Analytics, Twitter Analytics, etc. collect the personal
   information. But these information are almost always anonymized before they're
   handed over to us.
 
@@ -84,9 +84,9 @@ Information_"][privacy policy - personal information use] section of our
 If you feel insecure about sharing your private information with, you could
 first ensure the browsers you're using to use our projects enables you to browse
 securely without any trackers involved. Additionally, you can email the
-maintainer at [somraj.mle@gmail.com][email] to do so. But before you do so, make
+maintainer at [hello] at [jskherman.com] to do so. But before you do so, make
 sure you've read through the [Data Deletion Request (Universal
-Analytics)][data deletion rquest guide] guide for instructions on how to do the
+Analytics)][data deletion request guide] guide for instructions on how to do the
 same.
 
 If you've further queries about the same, feel free to reach out to the
@@ -96,9 +96,7 @@ maintainer of the project through the email contact provided above.
 
 <!-- TODO: Provide links to the third-party services used with the project -->
 
-The project utilized many third-party services to maintain it at optimal levels.
-You can find details of all the services in the wiki at:
-[List of Third-Party Services](../docs/blog.wiki/Tools%20and%20Services). And
+The project utilized many third-party services to maintain it at optimal levels. And
 quite often these services might've a data breach or break down at some point.
 If you come across any such vulnerabilities, please report them to the
 maintainer as soon as possible.
@@ -112,18 +110,18 @@ Agreement][terms of service].
 
 <!-- Reference links -->
 
-[terms of service]: https://jarmos.netlify.app/terms-of-service-agreement/
+[terms of service]: https://jskherman.com/terms-of-service-agreement/
 [email with variables]:
   mailto:somraj.mle@gmail.com?subject=Reporting%20a%20Security%20Vulnerability&body=List%20of%all%20the%20vulnerabilities
 [data deletion request guide]:
   https://support.google.com/analytics/answer/9450800?hl=en
 [email]: mailto:somraj.mle@gmail.com
 [privacy policy - personal information use]:
-  https://jarmos.netlify.app/privacy-policy/#use-of-your-personal-information
+  https://jskherman.com/privacy-policy/#use-of-your-personal-information
 [privacy policy - how do we collect the data]:
-  https://jarmos.netlify.app/privacy-policy/#we-collect-information-in-different-ways
+  https://jskherman.com/privacy-policy/#we-collect-information-in-different-ways
 [privacy policy - info we collect]:
-  https://jarmos.netlify.app/privacy-policy/#information-we-collect
-[privacy policy]: https://jarmos.netlify.app/privacy-policy/
-[blog]: https://jarmos.netlify.app
-[blog repository]: https://github.com/Jarmos-san/blog
+  https://jskherman.com/privacy-policy/#information-we-collect
+[privacy policy]: https://jskherman.com/privacy-policy/
+[blog]: https://jskherman.com
+[blog repository]: https://github.com/jsk-herman/paper-jsk
