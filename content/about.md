@@ -12,7 +12,7 @@ summary:
 
 Hi there! :wave: I'm Je Sian Keith Herman (_you can call me Jesh_).
 
-I am currently a 3rd year student at Bicol University studying chemical engineering. I know a bit
+I am currently a 3rd year student at Bicol University studying Chemical Engineering. I know a bit
 in Python.
 
 Besides programming, I'm also an amateur writer. My [blog](../blog/)
