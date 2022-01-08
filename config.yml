@@ -41,6 +41,7 @@ params:
   showtoc: true
   tocopen: false
   GoogleAnalyticsID: G-VCNYN41VWV
+  CloudinaryUrl: "https://res.cloudinary.com/jskherman/image/upload"
 
   profileMode:
         enabled: false
