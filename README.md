@@ -2,7 +2,7 @@
 # JSK's Blog
 
 [![Website][website]][personal website]
-[![Netlify Deploy][netlify deploy badge]][netlify deploy]
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8bfda220-f9f6-4e27-a20c-179dbb5abf17/deploy-status)](https://app.netlify.com/sites/nostalgic-sinoussi-5791d9/deploys)
 [![LinkedIn][my linkedin badge]][my linkedin]
 [![Ask Me Anything !][my ama badge]][my ama]
 [![Twitter Follow][my twitter badge]][my twitter]
@@ -299,8 +299,7 @@ Facing difficulties to deploy your site after forking this repository? Feel free
 explanation on something related to this project check out the [Discussion
 threads][project discussion threads].
 
-Or maybe your question isn't related to this project, then check out my [_Ask Me
-Anything_][my ama].
+Or maybe your question isn't related to this project, then feel free to [contact me][my ama].
 
 ## :clap: Acknowledgements
 
@@ -372,8 +371,6 @@ Anything_][my ama].
 
 [website]:
   https://img.shields.io/website?down_color=red&down_message=offline&label=Website&style=flat-square&up_color=green&up_message=online&url=https%3A%2F%2Fjskherman.com
-[netlify deploy badge]:
-  https://github.com/Jarmos-san/blog/workflows/Netlify%20Deploy/badge.svg?branch=dev
 [my linkedin badge]:
   https://img.shields.io/static/v1?label=LinkedIn&message=Connect&color=0077B5&style=flat-square&logo=linkedin
 <!-- [my quora badge]:
