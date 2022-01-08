@@ -4,9 +4,9 @@
 [![Website][website]][personal website]
 [![Netlify Deploy][netlify deploy badge]][netlify deploy]
 [![LinkedIn][my linkedin badge]][my linkedin]
-<!-- [![Quora profile][my quora badge]][my quora] -->
-[![Ask Me Anything !][my ama badge]][my ama]
 [![Twitter Follow][my twitter badge]][my twitter]
+[![Ask Me Anything !][my ama badge]][my ama]
+<!-- [![Quora profile][my quora badge]][my quora] -->
 
 This repository hosts the tools, assets & themes for my [personal
 website][personal website]. The site is statically generated with
@@ -254,16 +254,12 @@ I'm no frontend developer, hence I often need a helping to fix something on the
 website. So, if you find something broken & a feature needing some improvement,
 don't hesitate to make a PR on [Jarmos-san's repo](https://github.com/Jarmos-san/blog). All suggestions & PRs to improve this project are appreciated.
 
-Or, perhaps you're just looking to get your feet wet in the open-source
-community. Then this site will be a perfect opportunity for you. Besides,
-there's a reason why I've open-sourced this personal website! :wink:
-
 There's a comprehensive guideline in the [CONTRIBUTING.md](https://github.com/Jarmos-san/blog/blob/main/.github/CONTRIBUTING.md) document. Refer to it for more details on contributing to the project.
 
 ### :eyes: Issues
 
 In case of a bug report, bugfix or a suggestion, please feel free to open an
-issue following the respective templates
+issue following the respective templates on [Jarmos-san's project](https://github.com/Jarmos-san/blog)
 
 - [Bug Report](https://github.com/Jarmos-san/blog/blob/main/.github/ISSUE_TEMPLATE/bug-report.md)
 - [Discussion](https://github.com/Jarmos-san/blog/blob/main/.github/ISSUE_TEMPLATE/discussion.md)
@@ -298,8 +294,7 @@ below:
 
 ## :raised_hand: Get Help
 
-Facing difficulties to deploy your site after forking this repository? Well then
-feel free to reach out to Jarmos. He is available on [Twitter](https://twitter.com/Jarmosan) &
+Facing difficulties to deploy your site after forking this repository? Feel free to reach out to Jarmos. He is available on [Twitter](https://twitter.com/Jarmosan) &
 [LinkedIn](https://www.linkedin.com/in/jarmos/) for a quick chat. But if you need a very comprehensive
 explanation on something related to this project check out the [Discussion
 threads][project discussion threads].
