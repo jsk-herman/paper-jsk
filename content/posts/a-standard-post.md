@@ -1,28 +1,22 @@
 ---
-title: "A Standard	Post"
-date: 2022-01-01T11:11:11+0800
+title: "A Standard\tPost"
+date: 2022-01-01T11:11:11.000+08:00
 category: Productivity
 slug: a-standard-post
-summary:
-  The most complete (yet standard) post you'll ever find for most of
-  your projects. Now spend more time on maintaining your project rather
-  than fixing issues.
-description:
-  The most complete (yet standard) post you'll ever find for most of
-  your projects. Now spend more time on maintaining your project rather
-  than fixing issues.
+summary: The most complete (yet standard) post you will ever find for most of your
+  projects. Now spend more time on maintaining your project rather than fixing issues.
+description: The most complete (yet standard) post you'll ever find for most of your
+  projects. Now spend more time on maintaining your project rather than fixing issues.
 cover:
-  image: https://miro.medium.com/max/1458/0*BDlSxjeXPGScC-Lm # "covers/pipeline.png"
-  alt: "Editing services coupled with Poetry is a life saver"
-  caption: "Act Now"
+  image: https://miro.medium.com/max/1458/0*BDlSxjeXPGScC-Lm
+  alt: Editing services coupled with Poetry is a life saver
+  caption: Act Now
   relative: true
 showtoc: true
-tags: ["devops"]
-draft: false
-# hidemeta: true
-# disableshare: true
----
+tags:
+- devops
 
+---
 Have you ever spent ages tinkering with tools rather than work on writing
 code for your Python project?
 
