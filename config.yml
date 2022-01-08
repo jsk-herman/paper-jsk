@@ -1,4 +1,4 @@
-baseURL: /site/
+baseURL: https://nostalgic-sinoussi-5791d9.netlify.app/
 languageCode: "en-us"
 title: "Je Sian Keith Herman"
 paginate: 5
@@ -144,9 +144,9 @@ menu:
   - name: Tags
     url: tags/
     weight: 9
-  - name: Search
-    url: search/
-    weight: 10
+  # - name: Search
+  #   url: search/
+  #   weight: 10
   # - name: Services
   #   identifier: hiring
   #   name: Services
