@@ -1,31 +1,34 @@
 ---
-title: A Standard	& Complete CI/CD Pipeline for Most Python Projects
-date: "2021-01-21"
-category: Programming
-slug: a-standard-ci-cd-pipeline-for-python-projects
+title: "A Standard	Post"
+date: 2022-01-01T11:11:11+0800
+category: Productivity
+slug: a-standard-post
 summary:
-  The most complete (yet standard) CI/CD pipeline you'll ever find for most of
-  your Python projects. Now spend more time on maintaining your project rather
-  than fixing CI/CD issues.
+  The most complete (yet standard) post you'll ever find for most of
+  your projects. Now spend more time on maintaining your project rather
+  than fixing issues.
 description:
-  The most complete (yet standard) CI/CD pipeline you'll ever find for most of
-  your Python projects. Now spend more time on maintaining your project rather
-  than fixing CI/CD issues.
+  The most complete (yet standard) post you'll ever find for most of
+  your projects. Now spend more time on maintaining your project rather
+  than fixing issues.
 cover:
-  image: "covers/pipeline.png"
-  alt: "GitHub services coupled with Poetry is a life saver"
-  caption: "Use GitHub Actions + Poetry & Chill!"
+  image: https://miro.medium.com/max/1458/0*BDlSxjeXPGScC-Lm # "covers/pipeline.png"
+  alt: "Editing services coupled with Poetry is a life saver"
+  caption: "Act Now"
   relative: true
 showtoc: true
+tags: ["devops"]
+draft: false
+# hidemeta: true
+# disableshare: true
 ---
 
-Have you ever spent ages tinkering with CI/CD tools rather than work on writing
+Have you ever spent ages tinkering with tools rather than work on writing
 code for your Python project?
 
 I sure did! There were times [Poetry][poetry landing page] couldn't install
 dependencies due to virtual environments. Or other times, the dependencies
-wouldn't just cache for some reasons. On top of that, CI/CD tools are difficult
-to debug dude to obscure error messages.
+wouldn't just cache for some reasons.
 
 Hence, I'm sharing this GitHub Actions workflow which I use with most of my
 Python projects. It works right out-of-the-box without any tinkering & sets you

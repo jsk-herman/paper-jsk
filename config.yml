@@ -1,42 +1,79 @@
 baseURL: "https://jarmos.netlify.app"
 languageCode: "en-us"
-title: "Somraj Saha"
-theme: "PaperMod"
+title: "Je Sian Keith Herman"
 paginate: 5
+theme: "PaperMod"
+
+enableInlineShortcodes: true
 enableRobotsTXT: true
-enableEmoji: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableEmoji: true
+
 minify:
   disableXML: true
   minifyOutput: true
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
 params:
-  env: production
-  title: Jarmos
-  description: "Personal website for Somraj Saha where I share content based on my experiences as an ML Engineer & self-taught programmer."
-  images: ['profile-pic.jpg']
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: JSK
+  description: "Personal website for Je Sian Keith Herman where I share content based on my experiences as an ML Engineer & self-taught programmer."
+  author: ["Je Sian Keith Herman"] # ["JSK", "Je Sian Keith Herman"]
+  images: ['avatar.png']
 
   defaultTheme: auto
-  disableThemeToggle: false
-  ShowReadingTime: true
+  # disableThemeToggle: true
   ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
   ShowPostNavLinks: true
-  GoogleAnalyticsID: G-V0ZH6RS2BM
-  disableSpecial1stPost: false
-  comments: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  comments: true
   hidemeta: false
-  showtoc: false
+  showtoc: true
   tocopen: false
+  GoogleAnalyticsID: G-VCNYN41VWV
+
+  profileMode:
+        enabled: false
+        title: JSK
+        imageUrl: "avatar.png"
+        imageTitle: my image
+        # imageWidth: 120
+        # imageHeight: 120
+        buttons:
+            - name: About
+              url: about
+            - name: Blog
+              url: blog
+            - name: Projects
+              url: projects/
+            # - name: Tags
+            #   url: tags
+            # - name: Search
+            #   url: search
+  
   assets:
     favicon: icons/favicon.ico
     favicon16x16: icons/favicon-16x16.png
     favicon32x32: icons/favicon-32x32.png
     apple_touch_icon: icons/apple-touch-icon.png
     android-chrome: icons/android-chrome-512x512.png
-    disableHLJS: true
+    disableHLJS: false
+
   label:
-    text: Somraj Saha
+    text: JSK's Blog
+    # icon: avatar.png
+    # iconHeight: 35
+
   homeInfoParams:
     Title: "Hi there! \U0001F44B"
     Content: |
@@ -45,28 +82,50 @@ params:
       - Besides that, you'll find content on topics like - "Machine Learning", "Python (the programming language)", "Software development practices" & so on.
       -
       - And if you enjoy reading the content, consider sharing them with your friends, family & acquiantances. Or if you believe I could improve something, leave a feedback though any of my contact details.
+      
   socialIcons:
-  - name: twitter
-    url: https://twitter.com/@Jarmosan
-  - name: github
-    url: https://github.com/Jarmos-san
-  - name: medium
-    url: https://medium.com/@Jarmos
-  - name: instagram
-    url: https://www.instagram.com/jarmos.san/
-  - name: linkedin
-    url: https://www.linkedin.com/in/jarmos/
-  - name: facebook
-    url: https://www.facebook.com/jarmos.san/
-  - name: email
-    url: mailto:somraj.mle@gmail.com
-  - name: buymeacoffee
-    url: https://www.buymeacoffee.com/Jarmos
+  - name: Twitter
+    url: https://twitter.com/jsk_herman
+  - name: Github
+    url: https://github.com/jsk-herman
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/jsk-herman/
+  # - name: medium
+  #   url: https://medium.com/@Jarmos
+  # - name: instagram
+  #   url: https://www.instagram.com/jarmos.san/
+  # - name: facebook
+  #   url: https://www.facebook.com/jarmos.san/
+  # - name: email
+  #   url: mailto:somraj.mle@gmail.com
+  - name: BuyMeACoffee
+    url: https://www.buymeacoffee.com/jsk_herman
+  - name: "RSS"
+    url: index.xml
+    
   cover:
     hidden: true
     hiddenInList: true
     hiddenInSingle: false
     linkFullImages: true
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.5
+    minMatchCharLength: 2
+    keys: ["title", "permalink", "summary", "content"]
+  
+  # analytics:
+  #       google:
+  #           SiteVerificationTag: "XYZabc"
+
+taxonomies:
+    category: categories
+    tag: tags
+
 menu:
   main:
   - name: About
@@ -81,11 +140,17 @@ menu:
     name: Projects
     url: projects/
     weight: 3
-  - name: Services
-    identifier: hiring
-    name: Services
-    url: services/
-    weight: 4
+  - name: Tags
+    url: tags/
+    weight: 9
+  - name: Search
+    url: search/
+    weight: 10
+  # - name: Services
+  #   identifier: hiring
+  #   name: Services
+  #   url: services/
+  #   weight: 4
   # - name: Collaborate
   #   identifier: collaborate
   #   url: collaborations/
@@ -94,18 +159,47 @@ menu:
   #   identifier: newsletter
   #   url: https://jarmos.ck.page/newsletter
   #   weight: 6
+
 markup:
-  highlight:
-    # anchorLineNos: true
-    # codeFences: true
-    # guessSyntax: true
-    # lineNos: true
-    # noClasses: false
-    # style: "borland"
-    anchorLineNos: false
-    codeFences: true
-    guessSyntax: false
-    lineNos: true
-    lineNumbersInTable: true
-    noClasses: true
-    style: native
+    goldmark:
+        renderer:
+            unsafe: true
+# markup:
+#   highlight:
+#     # anchorLineNos: true
+#     # codeFences: true
+#     # guessSyntax: true
+#     # lineNos: true
+#     # noClasses: false
+#     # style: "borland"
+#     anchorLineNos: false
+#     codeFences: true
+#     guessSyntax: false
+#     lineNos: true
+#     lineNumbersInTable: true
+#     noClasses: true
+#     style: native
+
+privacy:
+    vimeo:
+        disabled: false
+        simple: true
+
+    twitter:
+        disabled: false
+        enableDNT: true
+        simple: true
+
+    instagram:
+        disabled: false
+        simple: true
+
+    youtube:
+        disabled: false
+        privacyEnhanced: true
+
+services:
+    instagram:
+        disableInlineCSS: true
+    twitter:
+        disableInlineCSS: true

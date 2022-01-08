@@ -3,52 +3,149 @@ title: About Me
 url: "/about"
 hidemeta: true
 disableShare: true
+showtoc: false
+comments: false
 summary:
-  About Somraj Saha. This section details what he does & everything else you
+  About Je Sian Keith Herman. This section details what he does & everything else you
   might want to know about him.
 ---
 
-Hi there! :wave: I'm Somraj Saha (_you can call me Jarmos_).
+Hi there! :wave: I'm Je Sian Keith Herman (_you can call me Jesh_).
 
-I work as an independent Software Engineer for a living. Over the years I picked
-up knowledge in Python & Machine Learning (_mostly due to my academic background
-in Economics_). And only recently did I start dabbling around with frontend
-technologies for the Web.
+I am currently a 3rd year student at Bicol University studying chemical engineering. I know a bit
+in Python.
 
-I've listed my tech stack on the
-[Technology Stack](../services/#technology-stack) section of my Services page.
-So, in case you would like to hire me, that information might prove useful for
-you! :heart:
-
-Besides programming, I'm also an amateur Technical Writer. My [blog](../blog/)
-is one source where you can find most of my up-to-date written content. But,
-often there's a book or two I keep working on. If you would like to stay updated
-on their progress, you might want to follow me on Twitter.
-
-But when I'm on the [Terminal][terminal emulator], you can find me on Steam
-probably playing a game or two. If you would like to join me in a game, feel
-free to drop a message. You can DM me on Discord(**Jarmos#8937**) and/or on my
-[Steam][steam profile](**Jarmos-san**).
+Besides programming, I'm also an amateur writer. My [blog](../blog/)
+is one source where you can find most of my up-to-date written content.
 
 ### Contact Me
 
 Want to have a professional chat with me? Feel free to drop a DM! :smile:
+ 
+These are the platforms[^1] you can find me on:
 
-These are the platforms you can find me on:
+- Twitter: [@jsk_herman][twitter]
+- Linkedin: [www.linkedin.com/in/jsk-herman][linkedin]
 
-- Email: somraj.mle@gmail.com
-- Linkedin: [www.linkedin.com/in/jarmos][linkedin]
-- Twitter: [@Jarmosan][twitter]
+[^1]: **Note**: I'm more active on Twitter, so you'll definitely want to ping me there.
 
-**Note**: I'm more active on Twitter, so you'll definitely want to DM me there.
+You can also message me directly via the contact form below:
+
+<!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScR_cTaQg_CJ6OdpBNJl_mhrT-X7Vey1Fe0mWR552ucKDloWA/viewform?embedded=true" width="640" height="1010" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+
+<form 
+  name="contact"
+  action="/thank-you/"
+  method="POST"
+  data-netlify-recaptcha="true"
+  data-netlify="true"
+>
+  <input type="hidden" name="form-name" value="contact" />
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label for="Name"></label>
+    <div>
+      <input
+        id="contact-form-name"
+        name="Name" 
+        type="text" 
+        placeholder="Name" 
+        required="" 
+        autocomplete="off"
+      >
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label for="Email"></label>
+    <div>
+      <input
+        id="contact-form-email"
+        name="Email"
+        type="email" 
+        placeholder="Email Address" 
+        required="" 
+        autocomplete="off"
+      >
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label for="Subject"></label>
+    <div>
+      <input
+        id="contact-form-subject"
+        name="Subject" 
+        type="text" 
+        placeholder="Subject" 
+        required="" 
+        autocomplete="off"
+      >
+    </div>
+  </div>
+  
+  <!-- Textarea -->
+  <div class="form-group">
+    <label for=""></label>
+    <textarea 
+      class="form-control" 
+      id="contact-form-message" 
+      name="Message" 
+      placeholder="What's up?" 
+      required="" 
+      rows="8"
+    >
+    </textarea>
+  </div>
+
+  <!-- ReCaptcha -->
+  <div data-netlify-recaptcha="true"></div>
+
+  <!-- Button -->
+  <div class="form-group">
+    <button type="submit" value="Submit" id="Form-submit">Submit</button>
+  </div>
+
+  <style>
+      form {
+      padding: 15px;
+      margin: 5px;
+      box-shadow: 0 2px 5px --pre-background-color; 
+      background: --pre-background-color; 
+      }
+      input, textarea {
+      width: calc(100% - 18px);
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #1c87c9;
+      outline: none;
+      caret-color: var(--primary);
+      color: var(--primary);
+      }
+      input::placeholder {
+      color: #666;
+      }
+      button {
+      width: calc(100% - 18px);
+      padding: 10px;
+      border: none;
+      background: #1c87c9; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+      button:hover {
+      background: #2371a0;
+      }    
+  </style>
+
+</form>
 
 <!-- Reference Links -->
 
-[newsletter]: https://jarmos.ck.page/newsletter
-[twitter]: https://twitter.com/Jarmosan
-[linkedin]: https://www.linkedin.com/in/jarmos
-[email]: mailto:somraj.mle@gmail.com
-[github]: https://github.com/Jarmos-san
-[blog source code]: https://github.com/Jarmos-san/blog
-[steam profile]: https://steamcommunity.com/id/jarmos-san/
-[terminal emulator]: https://en.wikipedia.org/wiki/Terminal_emulator
+[twitter]: https://twitter.com/jsk_herman
+[linkedin]: https://www.linkedin.com/in/jsk-herman
+[github]: https://github.com/jsk-herman

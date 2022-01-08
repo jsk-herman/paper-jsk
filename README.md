@@ -1,3 +1,4 @@
+**NOTE**: This repository was forked and modified from [Jarmos-san's blog](https://github.com/Jarmos-san/blog).
 # :man_technologist: Somraj Saha's Blog
 
 [![Website][website]][personal website]

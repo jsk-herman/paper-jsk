@@ -2,15 +2,17 @@
   {{- if .Site.Copyright }}
   <span>{{ .Site.Copyright | markdownify }}</span>
   {{- else }}
-  <span>&copy; 2019-{{ now.Year }} <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a></span>
+  <span>&copy; 2020–{{ now.Year }} <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a></span>
   {{- end }}
   <span>&middot;</span>
   <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
   <span>&amp;</span>
   <span><a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
-  <br>
-  <span>This Site is <a href="https://github.com/Jarmos-san/blog" rel="noopener noreferrer" target="_blank">Open-Sourced</a> with &#10084;&#65039;</span>
+  <br/> <!-- <span>&middot;</span> -->
+  <span>Inspired by <a href="https://github.com/Jarmos-san/blog" rel="noopener" target="_blank">Jarmos</a></span>
   <span>&middot;</span>
+  <span>This Site is <a href="https://github.com/jsk-herman/paper-jsk" rel="noopener noreferrer" target="_blank">Open-Sourced</a> with &#10084;&#65039;</span>
+  <br/> <!-- <span>&middot;</span> -->
   <span><a href="../terms-of-service-agreement/index.html">Terms of Service</a></span>
   <span>&middot;</span>
   <span><a href="../privacy-policy/index.html">Privacy Policy</a></span>
