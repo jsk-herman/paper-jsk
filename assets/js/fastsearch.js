@@ -48,7 +48,7 @@ window.onload = function () {
             }
         }
     };
-    xhr.open("GET", "https://nostalgic-sinoussi-5791d9.netlify.app/");
+    xhr.open('GET', "../index.json");
     xhr.send();
 }
 
