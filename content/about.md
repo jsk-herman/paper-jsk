@@ -103,6 +103,7 @@ You can also message me directly via the contact form below:
 
   <!-- ReCaptcha -->
   <div data-netlify-recaptcha="true"></div>
+  <br/>
 
   <!-- Button -->
   <div class="form-group">
