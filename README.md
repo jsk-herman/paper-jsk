@@ -1,10 +1,10 @@
 **NOTE**: This repository was forked and modified from [Jarmos-san's blog](https://github.com/Jarmos-san/blog).
-# :man_technologist: Somraj Saha's Blog
+# JSK's Blog
 
 [![Website][website]][personal website]
 [![Netlify Deploy][netlify deploy badge]][netlify deploy]
 [![LinkedIn][my linkedin badge]][my linkedin]
-[![Quora profile][my quora badge]][my quora]
+<!-- [![Quora profile][my quora badge]][my quora] -->
 [![Ask Me Anything !][my ama badge]][my ama]
 [![Twitter Follow][my twitter badge]][my twitter]
 
@@ -14,7 +14,7 @@ website][personal website]. The site is statically generated with
 Static Site Generator(SSG) built with [Golang][go landing page] generates the
 static contents for the site to be deployed to [Netlify][netlify landing page].
 
-- [:man_technologist: Somraj Saha's Blog](#man_technologist-somraj-sahas-blog)
+- [JSK's Blog](#man_technologist-somraj-sahas-blog)
   - [:checkered_flag: Getting Started](#checkered_flag-getting-started)
     - [:running: The Easy & Quick Way To Get It Done](#running-the-easy--quick-way-to-get-it-done)
       - [:nut_and_bolt: Setup a Development Environment](#nut_and_bolt-setup-a-development-environment)
@@ -41,7 +41,7 @@ this [README](/README.md) should be your first step.
 
 A bird's eye overview of what the blog is capable of:
 
-- It's FREE, as in no server costs are involved (_for now_).
+- It's FREE, as in no server costs are involved (_for now at least till the quota_).
 - In context to the point above, there's no server in the first place to serve
   the website on the Internet. All the generated static content are delivered
   over [Netlify's CDN][netlify cdn guide].
@@ -69,7 +69,7 @@ A bird's eye overview of what the blog is capable of:
 - Make it a Wordpress alternative. Hence, it even supports an admin panel
   powered by Forestry.io!
 
-So, if the aforementioned points matters to you, then fo ahead & check out how
+So, if the aforementioned points matters to you, then go ahead & check out how
 to get your own blog which looks similar to mine.
 
 ### :running: The Easy & Quick Way To Get It Done
@@ -152,12 +152,11 @@ work][ga 4 doesn't work] out-of-the-box with Hugo's internal templates.
 
 **Note**: I'm in favour of using [Forestry.io][forestry]'s service right now
 over [Netlify CMS][netlify cms landing page]. It's much more easier & intuitive
-(_and less buggier too_) to setup. The decision was made after coming across a
-blocker as documented in [#40][issue #40]. Since, the devs of Netlify haven't
+(_and less buggier too_) to setup. Since, the devs of Netlify haven't
 shown any interest to fix the issue, Forestry is a better choice.
 
 For a detailed installation process, refer to the official Forestry.io
-[documentations][forestry docs]. The devs did an amazing job articultating the
+[documentations][forestry docs]. The devs did an amazing job articulating the
 exact procedure to set it up.
 
 That said, following are the advantages of get setting up a CMS admin panel on
@@ -167,7 +166,7 @@ the site:
   installed locally. Just access it at: `https://<YOUR-SITE>/admin` & start
   writing.
 - You can give editorial access to 2 more writers all for free. More than that
-  you would've to purchase a subsciption.
+  you would've to purchase a subscription.
 - Forestry leverages the Git-backend to update any config files it needs for the
   CMS, on your behalf. All you got to do is tweak the settings on it's web-based
   GUI.
@@ -203,7 +202,7 @@ on their platform, but it's pretty inefficient & non-scalable. Reasons being:
 
 - Netlify has a limited 300 minutes compared to GitHub's insane 2000 minutes of
   build times. While it should suffice if you've just one site but you can chew
-  through your quoate pretty quick once you start deploying more sites.
+  through your quota pretty quickly once you start deploying more sites.
 - Hugo is fast (_or rather the fastest SSG out there_). It'll generate your
   static files in under 1ms. Couple it with a fast Action, you can deploy the
   generated files to Netlify's CDN in less than half a min! This comes handy
@@ -233,7 +232,7 @@ Netlify (_finally!_ 😤)
   Site ID.
 
 And you're good to go! Write an article under the `./content` directory & push
-them to the remote respository. Then watch your workflow build & deploy the site
+them to the remote repository. Then watch your workflow build & deploy the site
 all under half a minute! 🤯
 
 ## :hammer_and_wrench: Built With
@@ -251,33 +250,29 @@ documentations:
 
 ## :building_construction: Contributing
 
-I'm no frontend mastermind, hence I often need a helping to fix something on the
+I'm no frontend developer, hence I often need a helping to fix something on the
 website. So, if you find something broken & a feature needing some improvement,
-don't hesitate to make a PR. All suggestions & PRs to improve this project are
-appreciated.
+don't hesitate to make a PR on [Jarmos-san's repo](https://github.com/Jarmos-san/blog). All suggestions & PRs to improve this project are appreciated.
 
-or, perhaps you're just looking to get your feet wet in the open-source
+Or, perhaps you're just looking to get your feet wet in the open-source
 community. Then this site will be a perfect opportunity for you. Besides,
 there's a reason why I've open-sourced this personal website! :wink:
 
-There's a comprehensive guideline in the
-[CONTRIBUTING.md](.github/CONTRIBUTING.md) document. Refer to it for more
-details on contributing to the project.
+There's a comprehensive guideline in the [CONTRIBUTING.md](https://github.com/Jarmos-san/blog/blob/main/.github/CONTRIBUTING.md) document. Refer to it for more details on contributing to the project.
 
 ### :eyes: Issues
 
 In case of a bug report, bugfix or a suggestion, please feel free to open an
 issue following the respective templates
 
-- [Ask a Question](.github/ISSUE_TEMPLATE/ask-a-question.md)
-- [Bug Report](.github/ISSUE_TEMPLATE/bug-report.md)
-- [Discussion](.github/ISSUE_TEMPLATE/discussion.md)
+- [Bug Report](https://github.com/Jarmos-san/blog/blob/main/.github/ISSUE_TEMPLATE/bug-report.md)
+- [Discussion](https://github.com/Jarmos-san/blog/blob/main/.github/ISSUE_TEMPLATE/discussion.md)
 
 ### :package: Pull Request
 
-Pull Requests are always welcome & I'll review them as quick as possible. But
+Pull Requests are always welcome & Jarmos will review them as quick as possible. But
 for easier collaboration, please follow the specification provided in the
-[PR template](.github/PULL_REQUEST_TEMPLATE.md).
+[PR template](https://github.com/Jarmos-san/blog/blob/main/.github/PULL_REQUEST_TEMPLATE/pull-request-template.md).
 
 ## :memo: License
 
@@ -285,11 +280,11 @@ All software used & the content I share are licensed under the T&Cs as stated
 below:
 
 1. All the literary content available under [`./content/posts`](./content/posts)
-   are licensed under the [CC0-1.0](./LICENSE) license.
+   are licensed under the [CC BY-NC 4.0](./LICENSE) license.
 
 2. The repository also uses and/or contains software used to generate the static
    contents for the personal website. Following are the software as well as
-   other related tools used & their licensings T&Cs.
+   other related tools used & their licensing T&Cs.
 
    | Software            | Licence T&Cs                                      |
    | ------------------- | ------------------------------------------------- |
@@ -304,8 +299,8 @@ below:
 ## :raised_hand: Get Help
 
 Facing difficulties to deploy your site after forking this repository? Well then
-feel free to reach out to me. I'm available on [Twitter][my twitter] &
-[LinkedIn][my linkedin] for a quick chat. But if you need a very comprehensive
+feel free to reach out to Jarmos. He is available on [Twitter](https://twitter.com/Jarmosan) &
+[LinkedIn](https://www.linkedin.com/in/jarmos/) for a quick chat. But if you need a very comprehensive
 explanation on something related to this project check out the [Discussion
 threads][project discussion threads].
 
@@ -324,12 +319,11 @@ Anything_][my ama].
 <!-- * Reference links -->
 <!-- ? Personal Related Links -->
 
-[personal website]: https://jarmos.netlify.app
-[my twitter]: https://twitter.com/Jarmosan
-[my linkedin]: https://www.linkedin.com/in/jarmos/
-[my ama]: https://github.com/Jarmos-san/Jarmos-san/discussions/categories/q-a
-[my quora]: https://www.quora.com/profile/Somraj-Saha-3
-[buy me a coffee]: https://www.buymeacoffee.com/jarmos
+[personal website]: https://jskherman.com
+[my twitter]: https://twitter.com/jsk_herman
+[my linkedin]: https://www.linkedin.com/in/jsk-herman/
+[my ama]: https://jskherman.com/about/#contact-me
+[buy me a coffee]: https://www.buymeacoffee.com/jsk_herman
 
 <!-- ? Hugo Related Links -->
 
@@ -366,7 +360,6 @@ Anything_][my ama].
 
 [project discussion threads]: https://github.com/Jarmos-san/blog/discussions
 [project contributors]: https://github.com/Jarmos-san/blog/graphs/contributors
-[issue #40]: https://github.com/Jarmos-san/blog/issues/40
 
 <!-- ? Miscellaneous Related Links -->
 
@@ -383,15 +376,15 @@ Anything_][my ama].
 <!-- ? Shield Badges -->
 
 [website]:
-  https://img.shields.io/website?down_color=Red&down_message=Down&label=Website&style=flat-square&up_color=Green&up_message=Up&url=https%3A%2F%2Fjarmos.netlify.app%2F
+  https://img.shields.io/website?down_color=red&down_message=offline&label=Website&style=flat-square&up_color=green&up_message=online&url=https%3A%2F%2Fjskherman.com
 [netlify deploy badge]:
   https://github.com/Jarmos-san/blog/workflows/Netlify%20Deploy/badge.svg?branch=dev
 [my linkedin badge]:
   https://img.shields.io/static/v1?label=LinkedIn&message=Connect&color=0077B5&style=flat-square&logo=linkedin
-[my quora badge]:
-  https://img.shields.io/static/v1?label=Quora&message=QnA&color=B92B27&style=flat-square&logo=quora
+<!-- [my quora badge]:
+  https://img.shields.io/static/v1?label=Quora&message=QnA&color=B92B27&style=flat-square&logo=quora -->
 [my ama badge]: https://img.shields.io/badge/Ask%20Me-Anything!-1abc9c.svg
-[my twitter badge]: https://img.shields.io/twitter/follow/Jarmosan?style=social
+[my twitter badge]: https://img.shields.io/twitter/follow/jsk_herman?style=social
 
 <!-- ? Documentations -->
 
@@ -419,4 +412,4 @@ Anything_][my ama].
 [tracking code setup instructions]:
   https://support.google.com/analytics/answer/9304153?hl=en&ref_topic=9303319
 [privacy policy]:
-  https://www.privacypolicygenerator.info/live.php?token=fsG90WvN3xCCNeV6wrBEI9ZowuN2KUEI
+  https://www.privacypolicygenerator.info/live.php?token=7TYyz4YllBX8CkqucVKqnKnuW5ihkGlp
