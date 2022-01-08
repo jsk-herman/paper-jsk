@@ -107,7 +107,7 @@ You can also message me directly via the contact form below:
 
   <!-- Button -->
   <div class="form-group">
-    <button type="submit" value="Submit" id="Form-submit">Submit</button>
+    <button type="submit" value="Submit" id="Form-submit" class="form-submit">Submit</button>
   </div>
 
   <style>
@@ -129,7 +129,8 @@ You can also message me directly via the contact form below:
       input::placeholder {
       color: #666;
       }
-      button {
+
+      .form-submit {
       width: calc(100% - 18px);
       padding: 10px;
       border: none;
@@ -138,7 +139,8 @@ You can also message me directly via the contact form below:
       font-weight: 400;
       color: #fff;
       }
-      button:hover {
+
+      .form-submit:hover {
       background: #2371a0;
       }    
   </style>
