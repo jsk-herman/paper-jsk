@@ -31,6 +31,7 @@ These are the platforms[^1] you can find me on:
 
 You can also message me directly via the contact form below:
 
+<!-- Google Form -->
 <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScR_cTaQg_CJ6OdpBNJl_mhrT-X7Vey1Fe0mWR552ucKDloWA/viewform?embedded=true" width="640" height="1010" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
 
 <form 
@@ -97,8 +98,7 @@ You can also message me directly via the contact form below:
       placeholder="What's up?" 
       required="" 
       rows="8"
-    >
-    </textarea>
+    ></textarea>
   </div>
 
   <!-- ReCaptcha -->
@@ -114,8 +114,8 @@ You can also message me directly via the contact form below:
       form {
       padding: 15px;
       margin: 5px;
-      box-shadow: 0 2px 5px --pre-background-color; 
-      background: --pre-background-color; 
+      box-shadow: 0 2px 5px --theme; 
+      background: --theme; 
       }
       input, textarea {
       width: calc(100% - 18px);
@@ -127,7 +127,10 @@ You can also message me directly via the contact form below:
       color: var(--primary);
       }
       input::placeholder {
-      color: #666;
+      color: var(--secondary);
+      }
+      textarea::placeholder {
+      color: var(--secondary);
       }
 
       .form-submit {
