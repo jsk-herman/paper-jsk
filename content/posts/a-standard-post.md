@@ -23,6 +23,8 @@ I sure did! There were times [Poetry](https://python-poetry.org/) couldn't insta
 
 Hence, I'm sharing this GitHub Actions workflow which I use with most of my Python projects. It works right out-of-the-box without any tinkering & sets you on the right path to publishing your project. The workflow is very minimal yet doesn't compromise on some of the most major CI/CD principles required for maintaining optimal coding standards. Keeping it minimal also means, you're free to build upon it for further changes & improvements.
 
+![]( https://res.cloudinary.com/jskherman/image/upload/v1641690046/Paper/image_2022-01-05_15_29_35_a3sfvm.png)
+
 That said, here're what you get with this workflow, out-of-the-box without any changes:
 
 * Linting & code formatting with `pylint`, `Black` & `isort` on all PRs & pushes
