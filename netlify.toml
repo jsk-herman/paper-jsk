@@ -11,3 +11,9 @@
   pretty_urls = true
 [build.processing.images]
   compress = true
+
+# URL Redirects
+[[redirects]]
+	from = "/*"
+	to = "/404/"
+	status = 404
