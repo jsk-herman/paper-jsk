@@ -116,7 +116,7 @@ params:
     shouldSort: true
     location: 0
     distance: 1000
-    threshold: 0.5
+    threshold: 0.4
     minMatchCharLength: 2
     keys: ["title", "permalink", "summary", "content"]
   
@@ -145,9 +145,9 @@ menu:
   - name: Tags
     url: tags/
     weight: 9
-  # - name: Search
-  #   url: search/
-  #   weight: 10
+  - name: Search
+    url: search/
+    weight: 10
   # - name: Services
   #   identifier: hiring
   #   name: Services
