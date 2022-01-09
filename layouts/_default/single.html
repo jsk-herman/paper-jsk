@@ -37,7 +37,8 @@
     {{- end -}}
   </div>
   --->
-
+  {{ if .Params.nofooter }}
+  {{ else }}
   <footer class="post-footer">
     {{- if .Params.tags }}
     <ul class="post-tags">
@@ -71,6 +72,7 @@
     {{- partial "share_icons.html" . }}
     {{- end }}
   </footer>
+  {{ end }}
 
   {{- if (.Param "comments") }}
   <br />
