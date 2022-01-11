@@ -8,13 +8,15 @@
 <!-- End of Google Search Console Tools -->
 
 <!-- Global site tag (gtag.js)-->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.GoogleAnalyticsID}}"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.GoogleAnalyticsID}}"></script> -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VCNYN41VWV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
-  gtag('config', '{{ .Site.Params.GoogleAnalyticsID}}');
+  gtag('config', 'G-VCNYN41VWV');
+  // gtag('config', '{{ .Site.Params.GoogleAnalyticsID}}');
 </script>
 <!-- End of Global site tag (gtag.js)-->
 
@@ -23,3 +25,8 @@
 {{ partial "math.html" . }}
 {{ end }}
 <!-- End of Math -->
+
+<!-- Webmention -->
+<link rel="webmention" href="https://webmention.io/jskherman.com/webmention" />
+<link rel="pingback" href="https://webmention.io/jskherman.com/xmlrpc" />
+<script src="/js/webmention.min.js" async></script>
