@@ -5,6 +5,7 @@ hidemeta: true
 disableShare: true
 showtoc: true
 comments: false
+searchhidden: true
 summary: "Privacy Policy for Je Sian Keith Herman's blog."
 draft: false
 ---

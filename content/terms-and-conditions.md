@@ -5,6 +5,7 @@ hidemeta: true
 disableShare: true
 showtoc: true
 comments: false
+searchhidden: true
 summary: "Terms of Service Agreement for using Je Sian Keith Herman's blog."
 draft: false
 ---
