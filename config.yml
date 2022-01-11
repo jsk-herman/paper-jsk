@@ -40,6 +40,7 @@ params:
   hidemeta: false
   showtoc: true
   tocopen: false
+  # math: true
   GoogleAnalyticsID: G-VCNYN41VWV
   CloudinaryUrl: "https://res.cloudinary.com/jskherman/image/upload"
 
