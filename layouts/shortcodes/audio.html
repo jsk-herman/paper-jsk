@@ -1,0 +1,10 @@
+<div class="container">
+  <figure {{ with .Get "class" }}class="{{ . }}" {{ end }}>
+    <audio style="width: 100%" controls preload="{{ .Get " preload" | default "metadata" }}">
+      {{ with .Get "src" }}
+      <source src="{{ . | relURL }}" type="audio/mpeg">{{ end }}
+    </audio>
+    {{ with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+</div>
+<!-- Format: audio src="/media/audio/your-audio-file.mp3" caption="your caption" -->
