@@ -18,16 +18,45 @@ in Python.
 Besides programming, I'm also an amateur writer. My [blog](../blog/)
 is one source where you can find most of my up-to-date written content.
 
-### Contact Me
 
-Want to have a professional chat with me? Feel free to drop a DM! :smile:
+
+## FAQ
+
+<details>
+<summary>Fancy some background music while you're here?</summary>
+
+> Ok, here is Restaurant to Another World's[^1] Main OST:
+> {{<audio src="https://res.cloudinary.com/jskherman/video/upload/v1641875513/Paper/isekai_shokudou-main_ost.mp3" caption="" >}} 
+
+[^1]: By the way, you can also fold this and the music won't stop.
+</details>
+<details>
+<summary>How do you pronounce your first name?</summary>
+
+> My first name "Je Sian Keith" is pronounced as /**ʤi ʃan kiːθ**/ (ji shan kith).
+</details>
+<details>
+<summary>What is your horoscope?</summary>
+
+>  It’s Gemini.
+</details>
+
+<details>
+<summary>Hotel?</summary>
+
+>  Trivago.
+</details>
+
+## Contact Me
+
+Want to have a chat with me? Feel free to drop a DM. :smile:
  
-These are the platforms[^1] you can find me on:
+These are the platforms[^2] you can find me on:
 
 - Twitter: [@jsk_herman][twitter]
-- Linkedin: [www.linkedin.com/in/jsk-herman][linkedin]
+- LinkedIn: [www.linkedin.com/in/jsk-herman][linkedin]
 
-[^1]: **Note**: I'm more active on Twitter, so you'll definitely want to ping me there.
+[^2]: **Note**: I'm more active on Twitter, so you'll definitely want to ping me there.
 
 You can also message me directly via the contact form below:
 
