@@ -1,5 +1,5 @@
 ---
-title: "A Standard\tPost"
+title: "A Standard Post"
 date: 2022-01-01T11:11:11.000+08:00
 category: Productivity
 slug: a-standard-post
@@ -12,12 +12,10 @@ cover:
   alt: Editing services coupled with Poetry is a life saver
   caption: Act Now
   relative: true
-showtoc: true
-tags:
-- devops
-
+# tags: 
+math: true
 ---
-Have you ever spent ages tinkering with tools rather than work on writing code for your Python project?
+Have you ever spent ages tinkering with tools rather than work on writing code for your Python project? [Link to relative url](../about.md) $$e^{\pi i} + 1 =0$$
 
 I sure did! There were times [Poetry](https://python-poetry.org/) couldn't install dependencies due to virtual environments. Or other times, the dependencies wouldn't just cache for some reasons.
 
