@@ -99,3 +99,4 @@ fields:
   type: boolean
   label: Is Draft?
   description: Whether a post is a draft or not
+  default: true
