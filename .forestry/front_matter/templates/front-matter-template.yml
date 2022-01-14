@@ -93,8 +93,8 @@ fields:
   description: If Table of Contents should be visible or not
   default: false
   showOnly:
-    field: showtoc
-    value: true
+    value: false
+  hidden: false
 - name: draft
   type: boolean
   label: Is Draft?
