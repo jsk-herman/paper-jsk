@@ -10,25 +10,21 @@ summary:
   might want to know about him.
 ---
 
-Hi there! :wave: I'm Je Sian Keith Herman (_you can call me Jesh_).
+Hi there! :wave: I'm Je Sian Keith Herman (*you can call me Jesh*).
 
-I am currently a 3rd year student at Bicol University studying Chemical Engineering. I know a bit
-in Python.
+I am currently a 3rd year student at Bicol University studying Chemical Engineering. I am also living a double life as an impostor thanks to the syndrome of the same name. I like coding and writing on the side[^1] when I have free time. My ~~brain vomit~~ [blog](/blog) is one source where you can find most of my up-to-date written content.
 
-Besides programming, I'm also an amateur writer. My [blog](../blog/)
-is one source where you can find most of my up-to-date written content.
+On an unrelated note, I like iced tea 🍹, iced coffee ☕, and ice cream 🍨 in no particular order. I also like RPGs, especially Pokémon, as well as visual novels[^2].
 
-
+> If you're looking for what I am up to these days, check out my **[Now page](/now)**.
 
 ## FAQ
 
 <details>
 <summary>Fancy some background music while you're here?</summary>
 
-> Ok, here is Restaurant to Another World's[^1] Main OST:
+> Ok, here is Restaurant to Another World'sMain OST:
 > {{<audio src="https://res.cloudinary.com/jskherman/video/upload/v1641875513/Paper/isekai_shokudou-main_ost.mp3" caption="" >}} 
-
-[^1]: By the way, you can also fold this and the music won't stop.
 </details>
 <details>
 <summary>How do you pronounce your first name?</summary>
@@ -44,19 +40,32 @@ is one source where you can find most of my up-to-date written content.
 <details>
 <summary>Hotel?</summary>
 
->  Trivago.
+>  Trivago[^3]
+
 </details>
 
 ## Contact Me
 
 Want to have a chat with me? Feel free to drop a DM. :smile:
  
-These are the platforms[^2] you can find me on:
+These are the platforms[^4] you can find me on:
 
 - Twitter: [@jsk_herman][twitter]
-- LinkedIn: [www.linkedin.com/in/jsk-herman][linkedin]
+- LinkedIn: [linkedin.com/in/jsk-herman][linkedin]
 
-[^2]: **Note**: I'm more active on Twitter, so you'll definitely want to ping me there.
+<!-- Footnotes -->
+
+[^1]: This blog is an example project.
+[^2]: I got introduced to the genre via [“The World God Only Knows” anime][TWGOK].
+[^3]: #NotSponsored
+[^4]: **Note**: I'm more active on Twitter, so you'll definitely want to ping me there.
+
+<!-- Reference Links -->
+
+[twitter]: https://twitter.com/jsk_herman
+[linkedin]: https://www.linkedin.com/in/jsk-herman
+[github]: https://github.com/jsk-herman
+[TWGOK]: https://myanimelist.net/anime/8525/Kami_nomi_zo_Shiru_Sekai
 
 You can also message me directly via the contact form below:
 
@@ -179,8 +188,3 @@ You can also message me directly via the contact form below:
 
 </form>
 
-<!-- Reference Links -->
-
-[twitter]: https://twitter.com/jsk_herman
-[linkedin]: https://www.linkedin.com/in/jsk-herman
-[github]: https://github.com/jsk-herman

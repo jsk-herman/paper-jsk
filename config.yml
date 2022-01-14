@@ -80,9 +80,9 @@ params:
   homeInfoParams:
     Title: "Hi there! \U0001F44B"
     Content: |
-      - Welcome to my website!. This is the right place to discover more about me if you're interested. I share my thoughts, opinions, projects showcases and experiences.
+      - Welcome to my website! This is the right place to discover more about me if you're interested. I share my thoughts, opinions, projects showcases and experiences.
       -
-      - And if you enjoy reading the content, consider sharing them with your friends, family, and acquiantances. Or if you believe I could improve something, leave a feedback though any of my contact details.
+      - And if you enjoy reading the content, consider sharing them with your friends, family, and acquiantances. Or if you believe I could improve something, leave a feedback through any of my contact details.
       
   socialIcons:
   - name: Twitter
@@ -133,14 +133,18 @@ menu:
     identifier: about
     url: about/
     weight: 1
+  - name: Now
+    identifier: now
+    url: now/
+    weight: 2
   - name: Blog
     identifier: blog
     url: blog/
-    weight: 2
+    weight: 3
   # - identifier: projects
   #   name: Projects
   #   url: projects/
-    weight: 3
+    weight: 4
   - name: Tags
     url: tags/
     weight: 9
