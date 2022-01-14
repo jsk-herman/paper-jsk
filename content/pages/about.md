@@ -12,7 +12,7 @@ summary:
 
 Hi there! :wave: I'm Je Sian Keith Herman (*you can call me Jesh*).
 
-I am currently a 3rd year student at Bicol University studying Chemical Engineering. I am also living a double life as an impostor thanks to the syndrome of the same name. I like coding and writing on the side[^1] when I have free time. My ~~brain vomit~~ [blog](/blog) is one source where you can find most of my up-to-date written content.
+I am currently a 3rd year student at [Bicol University][BU] studying [Chemical Engineering](ChE). I am also living a double life as an impostor thanks to the syndrome of the same name. I like coding and writing on the side[^1] when I have free time. My ~~brain vomit~~ [blog](/blog) is one source where you can find most of my up-to-date written content.
 
 On an unrelated note, I like iced tea 🍹, iced coffee ☕, and ice cream 🍨 in no particular order. I also like RPGs, especially Pokémon, as well as visual novels[^2].
 
@@ -66,6 +66,8 @@ These are the platforms[^4] you can find me on:
 [linkedin]: https://www.linkedin.com/in/jsk-herman
 [github]: https://github.com/jsk-herman
 [TWGOK]: https://myanimelist.net/anime/8525/Kami_nomi_zo_Shiru_Sekai
+[BU]: https://bicol-u.edu.ph/
+[ChE]: https://www.icheme.org/education/whynotchemeng/
 
 You can also message me directly via the contact form below:
 
