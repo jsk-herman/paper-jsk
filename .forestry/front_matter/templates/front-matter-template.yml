@@ -10,11 +10,6 @@ fields:
     required: true
     min: 20
     max: 120
-- name: category
-  type: tag_list
-  default: []
-  label: Category
-  description: Category of the article
 - type: datetime
   name: date
   label: Date
@@ -30,6 +25,16 @@ fields:
   description: The URL to show
   config:
     required: true
+- name: category
+  type: tag_list
+  default: []
+  label: Category
+  description: Category of the article
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+  description: A list of relevant keywords
 - name: summary
   type: textarea
   default: ''
@@ -79,9 +84,17 @@ fields:
   description: Featured cover image for an article
 - type: boolean
   name: showtoc
-  label: Show ToC
+  label: Show Table of Contents?
   description: If Table of Contents should be visible or not
   default: false
   showOnly:
     field: showtoc
     value: true
+- name: math
+  type: boolean
+  label: Has Math?
+  description: Toggle for KaTeX math support
+- name: draft
+  type: boolean
+  label: Is Draft?
+  description: Whether a post is a draft or not
