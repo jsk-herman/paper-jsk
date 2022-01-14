@@ -83,6 +83,10 @@ fields:
     name: relative
     label: Relative
   description: Featured cover image for an article
+- name: math
+  type: boolean
+  label: Has Math?
+  description: Toggle for KaTeX math support
 - type: boolean
   name: showtoc
   label: Show Table of Contents?
@@ -91,10 +95,6 @@ fields:
   showOnly:
     field: showtoc
     value: true
-- name: math
-  type: boolean
-  label: Has Math?
-  description: Toggle for KaTeX math support
 - name: draft
   type: boolean
   label: Is Draft?
