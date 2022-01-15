@@ -99,8 +99,10 @@ params:
   #   url: https://www.facebook.com/jarmos.san/
   # - name: email
   #   url: mailto:somraj.mle@gmail.com
-  - name: BuyMeACoffee
-    url: https://www.buymeacoffee.com/jsk_herman
+  - name: KoFi
+    url: https://ko-fi.com/jsk_herman
+  # - name: BuyMeACoffee
+  #   url: https://www.buymeacoffee.com/jsk_herman
   - name: "RSS"
     url: index.xml
     
