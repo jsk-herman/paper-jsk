@@ -71,13 +71,13 @@ fields:
     name: alt
     label: Alternate Text
     config:
-      required: true
+      required: false
     description: Alternate text for the cover image.
   - type: text
     name: caption
     label: Caption
     config:
-      required: true
+      required: false
     description: Caption that goes right under the cover image
   - type: boolean
     name: relative
