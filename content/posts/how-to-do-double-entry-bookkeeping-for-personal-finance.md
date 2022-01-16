@@ -1,4 +1,4 @@
-+++
+---
 category = ["Finance"]
 date = 2022-01-16T00:00:00Z
 description = "A guide on how to set up a ledger and do double-entry bookkeeping for your personal finances using GnuCash."
@@ -14,8 +14,8 @@ alt = ""
 caption = ""
 image = ""
 relative = false
+---
 
-+++
 ## Double-Entry Bookkeeping
 
 ### What is Double-Entry Bookkeeping?
@@ -24,7 +24,7 @@ On a tangent, it is interesting to note that there is some similarities with _do
 
 Some additional resources:
 
-* Check out the video [“](https://youtu.be/lIGJzQw79hg)[Double Entry Bookkeeping for Personal Finance” by Tea Leaves](https://youtu.be/lIGJzQw79hg "Double Entry Bookkeeping for Personal Finance” by Tea Leaves"). It gives a clear and concise introduction to the topic.
+* Check out the video [“Double Entry Bookkeeping for Personal Finance” by Tea Leaves](https://youtu.be/lIGJzQw79hg). It gives a clear and concise introduction to the topic.
 
 ### Why is it important?
 
