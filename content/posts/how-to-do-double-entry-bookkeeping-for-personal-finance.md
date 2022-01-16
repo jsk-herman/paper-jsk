@@ -10,8 +10,8 @@ summary = "A guide on how to set up a ledger and do double-entry bookkeeping for
 tags = ["personal finance", "gnucash", "accounting", "double-entry bookkeeping"]
 title = "How to do Double Entry Bookkeeping for Personal Finance"
 [cover]
-alt = "None"
-caption = "None"
+alt = ""
+caption = ""
 image = ""
 relative = false
 
