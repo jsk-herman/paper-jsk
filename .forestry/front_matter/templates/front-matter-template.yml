@@ -100,3 +100,5 @@ fields:
   label: Is Draft?
   description: Whether a post is a draft or not
   default: true
+pages:
+- content/posts/how-to-do-double-entry-bookkeeping-for-personal-finance.md
