@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: About
 url: "/about"
 hidemeta: true
 disableShare: true
@@ -8,7 +8,12 @@ comments: false
 summary:
   About Je Sian Keith Herman. This section details what he does & everything else you
   might want to know about him.
+description:
+  Who am I? Ooh, how philosophical. There's no exact answer but let's try.
 ---
+
+
+--- 
 
 Hi there! :wave: I'm Je Sian Keith Herman (*you can call me Jesh*).
 

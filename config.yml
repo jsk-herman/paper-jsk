@@ -137,7 +137,7 @@ menu:
     weight: 1
   - name: Now
     identifier: now
-    url: now/
+    url: https://jskherman.notion.site/Now-ec792577baf44dd3b441171240dabb92
     weight: 2
   - name: Blog
     identifier: blog

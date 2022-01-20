@@ -5,11 +5,12 @@ hidemeta: true
 disableShare: true
 showtoc: true
 comments: false
-summary:
+summary: About Je Sian Keith Herman's past. This section details what has happened, things done, experiences lived, and memories made.
+description: > 
   About Je Sian Keith Herman's past. This section details what has happened, things done, experiences lived, and memories made.
 ---
 
-> [🔙 Back to the present?](/now)
+> [🔙 Back to the present?](https://jskherman.notion.site/Now-ec792577baf44dd3b441171240dabb92)
 
 ---
 
