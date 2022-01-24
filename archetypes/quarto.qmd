@@ -1,0 +1,22 @@
+---
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+format:
+    hugo:
+        variant: "+emoji"
+        markdown-headings: atx
+        fig-format: svg
+slug:
+category:
+tags: 
+summary:
+description: Same as the summary
+cover:
+  image:
+  alt:
+  caption:
+  relative: false
+showtoc: true
+math: false
+draft: true
+---

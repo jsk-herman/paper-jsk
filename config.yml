@@ -209,3 +209,7 @@ services:
         disableInlineCSS: true
     twitter:
         disableInlineCSS: true
+
+ignoreFiles:
+  - \.qmd$
+  - \.ipynb$
