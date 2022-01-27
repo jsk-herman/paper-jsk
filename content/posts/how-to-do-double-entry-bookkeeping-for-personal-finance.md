@@ -18,7 +18,7 @@ cover:
   caption: ''
   image: ''
   relative: false
-# draft: true
+draft: true
 
 ---
 
