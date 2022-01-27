@@ -53,11 +53,11 @@ h6 {
 
 body {
     font-family: "charter", "Palatino Linotype","Palatino","Book Antiqua","Baskerville","Bookman Old Style","Garamond","Apple Garamond","Century Schoolbook","Georgia", "Times New Roman", serif;
+    font-size: clamp(18px,2vw,20px);
 }
 
 
 
 .logo a {
-    font-size: 24px;
     font-family: "charter", "Palatino Linotype","Palatino","Book Antiqua","Baskerville","Bookman Old Style","Garamond","Apple Garamond","Century Schoolbook","Georgia", "Times New Roman", serif;
 }
