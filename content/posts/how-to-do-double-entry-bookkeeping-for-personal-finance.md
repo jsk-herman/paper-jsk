@@ -30,8 +30,8 @@ Some additional resources:
 
 ### How can it help you with your finances?
 
-## hledger
+## `hledger`
 
-### What is hledger?
+### What is `hledger`?
 
 ### Setting Up
