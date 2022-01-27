@@ -38,8 +38,6 @@ Some additional resources:
 
 ### Why is it important?
 
-{{< figure src="https://res.cloudinary.com/jskherman/image/upload/v1642138958/Paper/lm404_wkzudg.png" caption="Loremaster from Helltaker looking surprised." >}}
-
 ### How can it help you with your finances?
 
 ## `hledger`
