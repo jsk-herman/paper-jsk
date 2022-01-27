@@ -10,7 +10,8 @@ description: >
   About Je Sian Keith Herman's past. This section details what has happened, things done, experiences lived, and memories made.
 ---
 
-> [🔙 Back to the present?](https://jskherman.notion.site/Now-ec792577baf44dd3b441171240dabb92)
+> [🔙 Back to the present?](/now)
+<!-- > [🔙 Back to the present?](https://jskherman.notion.site/Now-ec792577baf44dd3b441171240dabb92) -->
 
 ---
 
