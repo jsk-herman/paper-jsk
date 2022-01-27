@@ -2,25 +2,23 @@
 category:
 - Finance
 date: 2022-01-16T00:00:00.000+00:00
-description: A guide on how to set up a ledger and do double-entry bookkeeping for
-  your personal finances using hledger.
+description: A guide on how to do plain text accounting for your personal finances.
 math: false
 showtoc: false
 slug: personal-double-entry-bookkeeping
-summary: A guide on how to set up a ledger and do double-entry bookkeeping for your
-  personal finances using hledger.
+summary: A guide on how to do double-entry bookkeeping for your personal finances using hledger.
 tags:
 - personal finance
 - hledger
 - accounting
 - double-entry bookkeeping
-title: How To Do Double Entry Bookkeeping for Personal Finance
+title: "How To Do Double-Entry Bookkeeping for Personal Finance"
 cover:
   alt: ''
   caption: ''
   image: ''
   relative: false
-draft: true
+# draft: true
 
 ---
 
