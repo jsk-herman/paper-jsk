@@ -310,6 +310,14 @@ Or maybe your question isn't related to this project, then feel free to [contact
 - And at last, thanks to [all those who contributed][project contributors] to
   fixing & correcting my site.
 
+## Miscellaneous Notes
+
+For images, use the [`figure` shortcode][hugo-figure] in Hugo:
+
+```html
+{{< figure src="url_here" caption="Your caption here." >}}
+```
+
 <!-- * Reference links -->
 <!-- ? Personal Related Links -->
 
@@ -327,8 +335,8 @@ Or maybe your question isn't related to this project, then feel free to [contact
 [hugo license]: https://github.com/gohugoio/hugo/blob/master/LICENSE
 [hugo devs]: https://github.com/orgs/gohugoio/people
 [hugo-papermod dev]: https://github.com/adityatelange
-[hugo-papermod license]:
-  https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE
+[hugo-papermod license]: https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE
+[hugo-figure]: https://github.com/liwenyip/hugo-easy-gallery
 
 <!-- ? Netlify Related Links -->
 
