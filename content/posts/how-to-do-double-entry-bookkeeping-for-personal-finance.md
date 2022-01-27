@@ -23,6 +23,9 @@ cover:
 draft: true
 
 ---
+
+{{< load-photoswipe >}}
+
 ## Double-Entry Bookkeeping
 
 ### What is Double-Entry Bookkeeping?
@@ -35,7 +38,7 @@ Some additional resources:
 
 ### Why is it important?
 
-{{< figure src="https://res.cloudinary.com/jskherman/image/upload/v1642138958/Paper/lm404_wkzudg.png" title="Loremaster 404" >}}
+{{< figure src="https://res.cloudinary.com/jskherman/image/upload/v1642138958/Paper/lm404_wkzudg.png" caption="Loremaster from Helltaker looking surprised." >}}
 
 ### How can it help you with your finances?
 
