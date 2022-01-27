@@ -1,19 +1,19 @@
 ---
-category = ["Finance"]
-date = 2022-01-16T00:00:00Z
-description = "A guide on how to set up a ledger and do double-entry bookkeeping for your personal finances using GnuCash."
-draft = true
-math = false
-showtoc = false
-slug = "personal-double-entry-bookkeeping"
-summary = "A guide on how to set up a ledger and do double-entry bookkeeping for your personal finances using GnuCash."
-tags = ["personal finance", "gnucash", "accounting", "double-entry bookkeeping"]
-title = "How To Do Double Entry Bookkeeping for Personal Finance"
-[cover]
-alt = ""
-caption = ""
-image = ""
-relative = false
+category: ["Finance"]
+date: 2022-01-16T00:00:00Z
+description: "A guide on how to set up a ledger and do double-entry bookkeeping for your personal finances using hledger."
+draft: true
+math: false
+showtoc: false
+slug: "personal-double-entry-bookkeeping"
+summary: "A guide on how to set up a ledger and do double-entry bookkeeping for your personal finances using hledger."
+tags: ["personal finance", "hledger", "accounting", "double-entry bookkeeping"]
+title: "How To Do Double Entry Bookkeeping for Personal Finance"
+cover:
+    alt: ""
+    caption: ""
+    image: ""
+    relative: false
 ---
 
 ## Double-Entry Bookkeeping
@@ -30,8 +30,8 @@ Some additional resources:
 
 ### How can it help you with your finances?
 
-## GnuCash
+## hledger
 
-### What is GnuCash?
+### What is hledger?
 
-### Setting Up GnuCash
+### Setting Up
