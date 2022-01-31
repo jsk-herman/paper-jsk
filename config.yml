@@ -86,11 +86,11 @@ params:
       
   socialIcons:
   - name: Twitter
-    url: https://twitter.com/jsk_herman
+    url: https://twitter.com/jskherman
   - name: Github
-    url: https://github.com/jsk-herman
+    url: https://github.com/jskherman
   - name: LinkedIn
-    url: https://www.linkedin.com/in/jsk-herman/
+    url: https://www.linkedin.com/in/jskherman/
   # - name: medium
   #   url: https://medium.com/@Jarmos
   # - name: instagram
@@ -100,7 +100,7 @@ params:
   # - name: email
   #   url: mailto:somraj.mle@gmail.com
   - name: KoFi
-    url: https://ko-fi.com/jsk_herman
+    url: https://ko-fi.com/jskherman
   # - name: BuyMeACoffee
   #   url: https://www.buymeacoffee.com/jsk_herman
   - name: "RSS"
