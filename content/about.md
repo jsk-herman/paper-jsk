@@ -55,8 +55,8 @@ Want to have a chat with me? Feel free to drop a DM. :smile:
  
 These are the platforms[^4] you can find me on:
 
-- Twitter: [@jsk_herman][twitter]
-- LinkedIn: [linkedin.com/in/jsk-herman][linkedin]
+- Twitter: [@jskherman][twitter]
+- LinkedIn: [linkedin.com/in/jskherman][linkedin]
 
 <!-- Footnotes -->
 
@@ -67,9 +67,9 @@ These are the platforms[^4] you can find me on:
 
 <!-- Reference Links -->
 
-[twitter]: https://twitter.com/jsk_herman
-[linkedin]: https://www.linkedin.com/in/jsk-herman
-[github]: https://github.com/jsk-herman
+[twitter]: https://twitter.com/jskherman
+[linkedin]: https://www.linkedin.com/in/jskherman
+[github]: https://github.com/jskherman
 [TWGOK]: https://myanimelist.net/anime/8525/Kami_nomi_zo_Shiru_Sekai
 [BU]: https://bicol-u.edu.ph/
 [ChE]: https://www.icheme.org/education/whynotchemeng/
