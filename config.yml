@@ -92,6 +92,8 @@ params:
     url: https://github.com/jskherman
   - name: LinkedIn
     url: https://www.linkedin.com/in/jskherman/
+  - name: Visual Novel Database
+    url: https://vndb.org/u216922
   # - name: medium
   #   url: https://medium.com/@Jarmos
   # - name: instagram
@@ -102,6 +104,7 @@ params:
   #   url: mailto:somraj.mle@gmail.com
   - name: KoFi
     url: https://ko-fi.com/jskherman
+  
   # - name: BuyMeACoffee
   #   url: https://www.buymeacoffee.com/jsk_herman
   - name: "RSS"
