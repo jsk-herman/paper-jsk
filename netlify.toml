@@ -26,4 +26,4 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "no-referrer"
     X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self';"
+    Content-Security-Policy = "default-src 'self'; script-src 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com https://jsk-umami--analytics.herokuapp.com"
