@@ -63,16 +63,17 @@ We can simply just have our notes during the lecture or when reading as:
 
 For equations or formulas, we can just have them as:
 
-> The Clapeyron Equation $\\frac{dP}{dT} = \\frac{\\Delta_{\\text{trs}}S}{\\Delta_{\\text{trs}}V}$
+> The Clapeyron Equation
+> $$\\frac{dP}{dT} = \\frac{\\Delta_{\\text{trs}}S}{\\Delta_{\\text{trs}}V}$$
 
 or
 
 > Common Derivatives
 > $$\\frac{d}{dx} \\left( x^n \\right) = nx^{n-1}$$
 
-After we are done reading for the day or with the lecture, we then rocess our notes. We go back and try to explain the concepts and equations we have jotted down. This is the reason why we did not write the full definition/explanation earlier so that we could apply the [Feynman Technique](https://fs.blog/2021/02/feynman-learning-technique/). At the same time, we can figure out which things we do not understand and focus on that (deliberate practice). It is two birds with one stone.
+After we are done reading for the day or with the lecture, we then process our notes. We go back and try to explain the concepts and equations we have jotted down. This is the reason we did not write the full definition/explanation earlier so that we could apply the [Feynman Technique](https://fs.blog/2021/02/feynman-learning-technique/). At the same time, we can figure out which things we do not understand and focus on that (deliberate practice). It is two birds with one stone.
 
-Again, we can also transform our notes into flashcards and put it inside Anki, like so:
+Again, we can also transform our notes into flashcards and put them inside Anki, like so:
 
 > Original:
 > “The Second Law of Thermodynamics states that a spontaneous process increases the entropy of a system.”
@@ -88,12 +89,12 @@ We get both ways in contrast, and it is easy to create these flashcards in Anki 
 > Flashcard:
 > $$\\frac{d}{dx} \\left( x^n \\right) = \\ ?$$
 
-We can also make better flashcard by using images and mnemonics. For even greater effect we can link ideas together by adopting the use of the [Zettelkasten method](https://zettelkasten.de/posts/overview/) but this is a post for another day.
+We can also make better flashcards by using images and mnemonics. For even greater effect we can link ideas together by adopting the use of the [Zettelkasten method](https://zettelkasten.de/posts/overview/) but this is a post for another day.
 
-This may all seem great, but Anki may not help you much in problem-solving especially in subjects that are math-heavy and technical. What you can do to improve your problem-solving skills is to practice answering problem sets. This is also a form of recall as mini-testing. By doing problem sets, you build chunks of the procedures needed for many types of problems that you encounter. And, if you interleave many different problems types your mastery becomes much better.
+This may all seem great, but Anki may not help you much in problem-solving, especially in subjects that are math-heavy and technical. What you can do to improve your problem-solving skills is to practice answering problem sets. This is also a form of recall as mini testing. By doing problem sets, you build chunks of the procedures needed for many types of problems that you encounter. And, if you interleave many different problem types, your understanding becomes much better.
 
 # Conclusion
 
-Undertaking a huge project such as a reading a full textbook on a subject can be daunting. However, if you can break it down into simpler tasks and use all of what you have under your disposal to increase our chances then it might not be so daunting after all. You just need to do a little work each day to learn. And, in this post you got a glimpse of how you could tackle any textbook on a subject or even others without a textbook.
+Undertaking a huge project such as reading a full textbook on a subject can be daunting. However, if you can break it down into simpler tasks and use all of what you have at your disposal to increase our chances then it might not be so daunting, after all. You just need to do a little work each day to learn. And, in this post you got a glimpse of how you could tackle any textbook on a subject or even others without a textbook.
 
 \[^1\]: Pauk, Walter; Owens, Ross J. Q. (2010). How to Study in College (10 ed.). Boston, MA: Wadsworth. ISBN 978-1-4390-8446-5. Chapter 10: "The Cornell System: Take Effective Notes", pp. 235-277
