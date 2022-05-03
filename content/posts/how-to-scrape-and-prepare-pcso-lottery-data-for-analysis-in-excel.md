@@ -2,7 +2,6 @@
 category = ["Code", "Data Science"]
 date = 2021-08-05T00:00:00Z
 description = "In this post we will be scraping the historical lottery data for various games at the Philippine Charity Sweepstakes Office website so we can analyze it for later."
-draft = true
 math = false
 showtoc = true
 slug = "scraping-lottery-data"
