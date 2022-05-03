@@ -15,13 +15,13 @@ image = "https://res.cloudinary.com/jskherman/image/upload/v1651554590/Paper/lot
 relative = false
 
 +++
-{{< load-photoswipe >}}
+<!--- {{< load-photoswipe >}} --->
 
 In this post we will be scraping the historical lottery data for various games at the Philippine Charity Sweepstakes Office website so we can analyze it for later.
 
 # Scraping the Data
 
----
+***
 
 Let us first install the modules we're going to need for scraping the website (skip this if you already have them).
 
@@ -67,6 +67,7 @@ url = "https://www.pcso.gov.ph/SearchLottoResult.aspx"
 ```
 
 Now initialize a Selenium session by directing it to the webdriver executable.
+
 ```python
 # Initialize the Edge webdriver
 driver = webdriver.Edge(executable_path=path) 
@@ -165,6 +166,7 @@ rows = doc.find('table', id='cphContainer_cpContent_GridView1').find_all(
 ```
 
 Now time to put the data in a python list/dictionary.
+
 ```python
 # Initialize a list to hold our data
 entries = []
@@ -184,7 +186,7 @@ for row in rows:
 
 # Processing the Data
 
----
+***
 
 ## Cleaning Up the Data with `pandas`
 
@@ -201,8 +203,7 @@ df.drop_duplicates(inplace=True, keep=False)
 df = df[df["Combination"] != "-                "]
 ```
 
-The part `df = df[df["Combination"] != "-                "]` above is to look for and remove entries that do not have a combination. I also found this after hours of figuring out why I cannot do certain operations on the data like converting them into the proper data types. Speaking of data types, let's go convert the data now.
-
+The part `df = df[df["Combination"] != "- "]` above is to look for and remove entries that do not have a combination. I also found this after hours of figuring out why I cannot do certain operations on the data like converting them into the proper data types. Speaking of data types, let's go convert the data now.
 
 ```python
 # Convert the dates to datetime type
@@ -222,134 +223,131 @@ Now let's look at our data so far:
 df
 ```
 
-
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+.dataframe tbody tr th:only-of-type {
+vertical-align: middle;
+}
 
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Game</th>
-      <th>Combination</th>
-      <th>Date</th>
-      <th>Prize</th>
-      <th>Winners</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Megalotto 6/45</td>
-      <td>42-34-24-02-38-23</td>
-      <td>2021-08-04</td>
-      <td>11114277.8</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Suertres Lotto 11AM</td>
-      <td>9-1-4</td>
-      <td>2021-08-04</td>
-      <td>4500.0</td>
-      <td>279</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Suertres Lotto 9PM</td>
-      <td>0-5-5</td>
-      <td>2021-08-04</td>
-      <td>4500.0</td>
-      <td>154</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>EZ2 Lotto 4PM</td>
-      <td>18-18</td>
-      <td>2021-08-04</td>
-      <td>4000.0</td>
-      <td>281</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Ultra Lotto 6/58</td>
-      <td>54-03-40-36-53-34</td>
-      <td>2021-08-03</td>
-      <td>53105608.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>16448</th>
-      <td>EZ2 Lotto 4PM</td>
-      <td>22-22</td>
-      <td>2011-01-03</td>
-      <td>4000.0</td>
-      <td>123</td>
-    </tr>
-    <tr>
-      <th>16449</th>
-      <td>Superlotto 6/49</td>
-      <td>16-17-41-31-19-03</td>
-      <td>2011-01-02</td>
-      <td>55184738.4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>16450</th>
-      <td>Suertres Lotto 4PM</td>
-      <td>4-7-1</td>
-      <td>2011-01-02</td>
-      <td>4500.0</td>
-      <td>234</td>
-    </tr>
-    <tr>
-      <th>16451</th>
-      <td>EZ2 Lotto 9PM</td>
-      <td>23-31</td>
-      <td>2011-01-02</td>
-      <td>4000.0</td>
-      <td>193</td>
-    </tr>
-    <tr>
-      <th>16452</th>
-      <td>EZ2 Lotto 11AM</td>
-      <td>09-04</td>
-      <td>2011-01-02</td>
-      <td>4000.0</td>
-      <td>112</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Game</th>
+<th>Combination</th>
+<th>Date</th>
+<th>Prize</th>
+<th>Winners</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Megalotto 6/45</td>
+<td>42-34-24-02-38-23</td>
+<td>2021-08-04</td>
+<td>11114277.8</td>
+<td>0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Suertres Lotto 11AM</td>
+<td>9-1-4</td>
+<td>2021-08-04</td>
+<td>4500.0</td>
+<td>279</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Suertres Lotto 9PM</td>
+<td>0-5-5</td>
+<td>2021-08-04</td>
+<td>4500.0</td>
+<td>154</td>
+</tr>
+<tr>
+<th>3</th>
+<td>EZ2 Lotto 4PM</td>
+<td>18-18</td>
+<td>2021-08-04</td>
+<td>4000.0</td>
+<td>281</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Ultra Lotto 6/58</td>
+<td>54-03-40-36-53-34</td>
+<td>2021-08-03</td>
+<td>53105608.0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>16448</th>
+<td>EZ2 Lotto 4PM</td>
+<td>22-22</td>
+<td>2011-01-03</td>
+<td>4000.0</td>
+<td>123</td>
+</tr>
+<tr>
+<th>16449</th>
+<td>Superlotto 6/49</td>
+<td>16-17-41-31-19-03</td>
+<td>2011-01-02</td>
+<td>55184738.4</td>
+<td>0</td>
+</tr>
+<tr>
+<th>16450</th>
+<td>Suertres Lotto 4PM</td>
+<td>4-7-1</td>
+<td>2011-01-02</td>
+<td>4500.0</td>
+<td>234</td>
+</tr>
+<tr>
+<th>16451</th>
+<td>EZ2 Lotto 9PM</td>
+<td>23-31</td>
+<td>2011-01-02</td>
+<td>4000.0</td>
+<td>193</td>
+</tr>
+<tr>
+<th>16452</th>
+<td>EZ2 Lotto 11AM</td>
+<td>09-04</td>
+<td>2011-01-02</td>
+<td>4000.0</td>
+<td>112</td>
+</tr>
+</tbody>
 </table>
 <p>16445 rows × 5 columns</p>
 </div>
-
-
 
 ## Saving the data to an MS Excel workbook
 
 So far it's looking good. Since we're now here it's time for us to split this huge dataframe of ours into smaller dataframes by the type of lotto game. While we're at it let's also fix the time for the Suertres Lotto and EZ2 Lotto games so that they are included in the data and not as a separate category.
 
 After doing that, let's save that into an Excel workbook so that we do not have to scrape every time we want to analyze the data.
-
 
 ```python
 # Sort the dataframe by game
@@ -379,88 +377,84 @@ lotto_3dc = df.loc[df["Game"]=="Suertres Lotto 9PM"].copy()
 lotto_2da = df.loc[df["Game"]=="EZ2 Lotto 11AM"].copy()
 lotto_2db = df.loc[df["Game"]=="EZ2 Lotto 4PM"].copy()
 lotto_2dc = df.loc[df["Game"]=="EZ2 Lotto 9PM"].copy()
-
 ```
 
 Let's look at one of the dataframes:
-
 
 ```python
 lotto_2da.tail()
 ```
 
-
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+.dataframe tbody tr th:only-of-type {
+vertical-align: middle;
+}
 
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Game</th>
-      <th>Combination</th>
-      <th>Date</th>
-      <th>Prize</th>
-      <th>Winners</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>417</th>
-      <td>EZ2 Lotto 11AM</td>
-      <td>10-05</td>
-      <td>2021-05-04</td>
-      <td>4000.0</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>15982</th>
-      <td>EZ2 Lotto 11AM</td>
-      <td>13-21</td>
-      <td>2011-04-06</td>
-      <td>4000.0</td>
-      <td>62</td>
-    </tr>
-    <tr>
-      <th>376</th>
-      <td>EZ2 Lotto 11AM</td>
-      <td>03-16</td>
-      <td>2021-05-13</td>
-      <td>4000.0</td>
-      <td>46</td>
-    </tr>
-    <tr>
-      <th>15977</th>
-      <td>EZ2 Lotto 11AM</td>
-      <td>25-25</td>
-      <td>2011-04-07</td>
-      <td>4000.0</td>
-      <td>164</td>
-    </tr>
-    <tr>
-      <th>14469</th>
-      <td>EZ2 Lotto 11AM</td>
-      <td>09-24</td>
-      <td>2012-02-08</td>
-      <td>4000.0</td>
-      <td>186</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Game</th>
+<th>Combination</th>
+<th>Date</th>
+<th>Prize</th>
+<th>Winners</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>417</th>
+<td>EZ2 Lotto 11AM</td>
+<td>10-05</td>
+<td>2021-05-04</td>
+<td>4000.0</td>
+<td>23</td>
+</tr>
+<tr>
+<th>15982</th>
+<td>EZ2 Lotto 11AM</td>
+<td>13-21</td>
+<td>2011-04-06</td>
+<td>4000.0</td>
+<td>62</td>
+</tr>
+<tr>
+<th>376</th>
+<td>EZ2 Lotto 11AM</td>
+<td>03-16</td>
+<td>2021-05-13</td>
+<td>4000.0</td>
+<td>46</td>
+</tr>
+<tr>
+<th>15977</th>
+<td>EZ2 Lotto 11AM</td>
+<td>25-25</td>
+<td>2011-04-07</td>
+<td>4000.0</td>
+<td>164</td>
+</tr>
+<tr>
+<th>14469</th>
+<td>EZ2 Lotto 11AM</td>
+<td>09-24</td>
+<td>2012-02-08</td>
+<td>4000.0</td>
+<td>186</td>
+</tr>
+</tbody>
 </table>
 </div>
-
-
 
 For the Suertres Lotto and EZ2 Lotto games the games are split into 11:00 AM, 4:00 PM, and 9:00 PM games. Let's fix that by assigning them the proper datetime values in the Date column and combining them into bigger dataframes
 
@@ -485,7 +479,6 @@ lotto_3d = lotto_3d.append(lotto_3db)
 lotto_3d = lotto_3d.append(lotto_3dc)
 ```
 
-
 ```python
 # Do the same for EZ2 Lotto
 lotto_2da["Date"] = lotto_2da["Date"] + timedelta(hours=11)
@@ -509,259 +502,253 @@ Now let's look at one of them again to see if we were successful:
 lotto_2da
 ```
 
-
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+.dataframe tbody tr th:only-of-type {
+vertical-align: middle;
+}
 
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Game</th>
-      <th>Combination</th>
-      <th>Date</th>
-      <th>Prize</th>
-      <th>Winners</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>6754</th>
-      <td>EZ2 Lotto</td>
-      <td>13-03</td>
-      <td>2016-12-26 11:00:00</td>
-      <td>4000.0</td>
-      <td>132</td>
-    </tr>
-    <tr>
-      <th>8012</th>
-      <td>EZ2 Lotto</td>
-      <td>30-15</td>
-      <td>2016-03-12 11:00:00</td>
-      <td>4000.0</td>
-      <td>222</td>
-    </tr>
-    <tr>
-      <th>3705</th>
-      <td>EZ2 Lotto</td>
-      <td>04-09</td>
-      <td>2018-11-15 11:00:00</td>
-      <td>4000.0</td>
-      <td>287</td>
-    </tr>
-    <tr>
-      <th>12388</th>
-      <td>EZ2 Lotto</td>
-      <td>30-27</td>
-      <td>2013-05-25 11:00:00</td>
-      <td>4000.0</td>
-      <td>102</td>
-    </tr>
-    <tr>
-      <th>12127</th>
-      <td>EZ2 Lotto</td>
-      <td>18-10</td>
-      <td>2013-07-25 11:00:00</td>
-      <td>4000.0</td>
-      <td>95</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>417</th>
-      <td>EZ2 Lotto</td>
-      <td>10-05</td>
-      <td>2021-05-04 11:00:00</td>
-      <td>4000.0</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>15982</th>
-      <td>EZ2 Lotto</td>
-      <td>13-21</td>
-      <td>2011-04-06 11:00:00</td>
-      <td>4000.0</td>
-      <td>62</td>
-    </tr>
-    <tr>
-      <th>376</th>
-      <td>EZ2 Lotto</td>
-      <td>03-16</td>
-      <td>2021-05-13 11:00:00</td>
-      <td>4000.0</td>
-      <td>46</td>
-    </tr>
-    <tr>
-      <th>15977</th>
-      <td>EZ2 Lotto</td>
-      <td>25-25</td>
-      <td>2011-04-07 11:00:00</td>
-      <td>4000.0</td>
-      <td>164</td>
-    </tr>
-    <tr>
-      <th>14469</th>
-      <td>EZ2 Lotto</td>
-      <td>09-24</td>
-      <td>2012-02-08 11:00:00</td>
-      <td>4000.0</td>
-      <td>186</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Game</th>
+<th>Combination</th>
+<th>Date</th>
+<th>Prize</th>
+<th>Winners</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>6754</th>
+<td>EZ2 Lotto</td>
+<td>13-03</td>
+<td>2016-12-26 11:00:00</td>
+<td>4000.0</td>
+<td>132</td>
+</tr>
+<tr>
+<th>8012</th>
+<td>EZ2 Lotto</td>
+<td>30-15</td>
+<td>2016-03-12 11:00:00</td>
+<td>4000.0</td>
+<td>222</td>
+</tr>
+<tr>
+<th>3705</th>
+<td>EZ2 Lotto</td>
+<td>04-09</td>
+<td>2018-11-15 11:00:00</td>
+<td>4000.0</td>
+<td>287</td>
+</tr>
+<tr>
+<th>12388</th>
+<td>EZ2 Lotto</td>
+<td>30-27</td>
+<td>2013-05-25 11:00:00</td>
+<td>4000.0</td>
+<td>102</td>
+</tr>
+<tr>
+<th>12127</th>
+<td>EZ2 Lotto</td>
+<td>18-10</td>
+<td>2013-07-25 11:00:00</td>
+<td>4000.0</td>
+<td>95</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>417</th>
+<td>EZ2 Lotto</td>
+<td>10-05</td>
+<td>2021-05-04 11:00:00</td>
+<td>4000.0</td>
+<td>23</td>
+</tr>
+<tr>
+<th>15982</th>
+<td>EZ2 Lotto</td>
+<td>13-21</td>
+<td>2011-04-06 11:00:00</td>
+<td>4000.0</td>
+<td>62</td>
+</tr>
+<tr>
+<th>376</th>
+<td>EZ2 Lotto</td>
+<td>03-16</td>
+<td>2021-05-13 11:00:00</td>
+<td>4000.0</td>
+<td>46</td>
+</tr>
+<tr>
+<th>15977</th>
+<td>EZ2 Lotto</td>
+<td>25-25</td>
+<td>2011-04-07 11:00:00</td>
+<td>4000.0</td>
+<td>164</td>
+</tr>
+<tr>
+<th>14469</th>
+<td>EZ2 Lotto</td>
+<td>09-24</td>
+<td>2012-02-08 11:00:00</td>
+<td>4000.0</td>
+<td>186</td>
+</tr>
+</tbody>
 </table>
 <p>1820 rows × 5 columns</p>
 </div>
 
-
-
 Let's see also one of the combined dataframes:
-
 
 ```python
 lotto_2d
 ```
 
-
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+.dataframe tbody tr th:only-of-type {
+vertical-align: middle;
+}
 
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Game</th>
-      <th>Combination</th>
-      <th>Date</th>
-      <th>Prize</th>
-      <th>Winners</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>6754</th>
-      <td>EZ2 Lotto</td>
-      <td>13-03</td>
-      <td>2016-12-26 11:00:00</td>
-      <td>4000.0</td>
-      <td>132</td>
-    </tr>
-    <tr>
-      <th>8012</th>
-      <td>EZ2 Lotto</td>
-      <td>30-15</td>
-      <td>2016-03-12 11:00:00</td>
-      <td>4000.0</td>
-      <td>222</td>
-    </tr>
-    <tr>
-      <th>3705</th>
-      <td>EZ2 Lotto</td>
-      <td>04-09</td>
-      <td>2018-11-15 11:00:00</td>
-      <td>4000.0</td>
-      <td>287</td>
-    </tr>
-    <tr>
-      <th>12388</th>
-      <td>EZ2 Lotto</td>
-      <td>30-27</td>
-      <td>2013-05-25 11:00:00</td>
-      <td>4000.0</td>
-      <td>102</td>
-    </tr>
-    <tr>
-      <th>12127</th>
-      <td>EZ2 Lotto</td>
-      <td>18-10</td>
-      <td>2013-07-25 11:00:00</td>
-      <td>4000.0</td>
-      <td>95</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>10206</th>
-      <td>EZ2 Lotto</td>
-      <td>26-06</td>
-      <td>2014-10-22 21:00:00</td>
-      <td>4000.0</td>
-      <td>332</td>
-    </tr>
-    <tr>
-      <th>15245</th>
-      <td>EZ2 Lotto</td>
-      <td>29-01</td>
-      <td>2011-09-04 21:00:00</td>
-      <td>4000.0</td>
-      <td>86</td>
-    </tr>
-    <tr>
-      <th>10326</th>
-      <td>EZ2 Lotto</td>
-      <td>02-14</td>
-      <td>2014-09-24 21:00:00</td>
-      <td>4000.0</td>
-      <td>666</td>
-    </tr>
-    <tr>
-      <th>14238</th>
-      <td>EZ2 Lotto</td>
-      <td>09-24</td>
-      <td>2012-03-25 21:00:00</td>
-      <td>4000.0</td>
-      <td>476</td>
-    </tr>
-    <tr>
-      <th>10035</th>
-      <td>EZ2 Lotto</td>
-      <td>09-24</td>
-      <td>2014-12-01 21:00:00</td>
-      <td>4000.0</td>
-      <td>586</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Game</th>
+<th>Combination</th>
+<th>Date</th>
+<th>Prize</th>
+<th>Winners</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>6754</th>
+<td>EZ2 Lotto</td>
+<td>13-03</td>
+<td>2016-12-26 11:00:00</td>
+<td>4000.0</td>
+<td>132</td>
+</tr>
+<tr>
+<th>8012</th>
+<td>EZ2 Lotto</td>
+<td>30-15</td>
+<td>2016-03-12 11:00:00</td>
+<td>4000.0</td>
+<td>222</td>
+</tr>
+<tr>
+<th>3705</th>
+<td>EZ2 Lotto</td>
+<td>04-09</td>
+<td>2018-11-15 11:00:00</td>
+<td>4000.0</td>
+<td>287</td>
+</tr>
+<tr>
+<th>12388</th>
+<td>EZ2 Lotto</td>
+<td>30-27</td>
+<td>2013-05-25 11:00:00</td>
+<td>4000.0</td>
+<td>102</td>
+</tr>
+<tr>
+<th>12127</th>
+<td>EZ2 Lotto</td>
+<td>18-10</td>
+<td>2013-07-25 11:00:00</td>
+<td>4000.0</td>
+<td>95</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>10206</th>
+<td>EZ2 Lotto</td>
+<td>26-06</td>
+<td>2014-10-22 21:00:00</td>
+<td>4000.0</td>
+<td>332</td>
+</tr>
+<tr>
+<th>15245</th>
+<td>EZ2 Lotto</td>
+<td>29-01</td>
+<td>2011-09-04 21:00:00</td>
+<td>4000.0</td>
+<td>86</td>
+</tr>
+<tr>
+<th>10326</th>
+<td>EZ2 Lotto</td>
+<td>02-14</td>
+<td>2014-09-24 21:00:00</td>
+<td>4000.0</td>
+<td>666</td>
+</tr>
+<tr>
+<th>14238</th>
+<td>EZ2 Lotto</td>
+<td>09-24</td>
+<td>2012-03-25 21:00:00</td>
+<td>4000.0</td>
+<td>476</td>
+</tr>
+<tr>
+<th>10035</th>
+<td>EZ2 Lotto</td>
+<td>09-24</td>
+<td>2014-12-01 21:00:00</td>
+<td>4000.0</td>
+<td>586</td>
+</tr>
+</tbody>
 </table>
 <p>5567 rows × 5 columns</p>
 </div>
 
-
-
 So far so good. The final stretch here is going to be to save our data to Microsoft Excel and we can achieve that easily with `pandas` with `pandas.DataFrame.to_excel`.
-
 
 ```python
 # Create Excel writer object
