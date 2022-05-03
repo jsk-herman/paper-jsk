@@ -14,9 +14,6 @@ fields:
 - type: boolean
   name: math
   label: math
-- type: boolean
-  name: showtoc
-  label: showtoc
 - type: text
   name: slug
   label: slug
