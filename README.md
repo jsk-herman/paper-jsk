@@ -322,10 +322,10 @@ For images, use the [`figure` shortcode][hugo-figure] in Hugo:
 <!-- ? Personal Related Links -->
 
 [personal website]: https://jskherman.com
-[my twitter]: https://twitter.com/jsk_herman
-[my linkedin]: https://www.linkedin.com/in/jsk-herman/
+[my twitter]: https://twitter.com/jskherman
+[my linkedin]: https://www.linkedin.com/in/jskherman/
 [my ama]: https://jskherman.com/about/#contact-me
-[buy me a coffee]: https://www.buymeacoffee.com/jsk_herman
+[buy me a coffee]: https://www.buymeacoffee.com/jskherman
 
 <!-- ? Hugo Related Links -->
 
@@ -384,7 +384,7 @@ For images, use the [`figure` shortcode][hugo-figure] in Hugo:
 <!-- [my quora badge]:
   https://img.shields.io/static/v1?label=Quora&message=QnA&color=B92B27&style=flat-square&logo=quora -->
 [my ama badge]: https://img.shields.io/badge/Ask%20Me-Anything!-1abc9c.svg
-[my twitter badge]: https://img.shields.io/twitter/follow/jsk_herman?style=social
+[my twitter badge]: https://img.shields.io/twitter/follow/jskherman?style=social
 
 <!-- ? Documentations -->
 
