@@ -102,3 +102,4 @@ fields:
   default: true
 pages:
 - content/posts/how-to-do-double-entry-bookkeeping-for-personal-finance.md
+- content/posts/how-to-scrape-and-prepare-pcso-lottery-data-for-analysis-in-excel.md
