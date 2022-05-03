@@ -18,8 +18,7 @@ relative = false
 +++
 {{< load-photoswipe >}}
 
-In this post we will be scraping the historical lottery data at the Philippine
-Charity Sweepstakes Office so we can analyze it for later. Let's get started.
+In this post we will be scraping the historical lottery data for various games at the Philippine Charity Sweepstakes Office website so we can analyze it for later.
 
 # Scraping the Data
 
