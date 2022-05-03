@@ -15,8 +15,6 @@ image = "https://res.cloudinary.com/jskherman/image/upload/v1651554590/Paper/lot
 relative = false
 
 +++
-<!--- {{< load-photoswipe >}} --->
-
 In this post we will be scraping the historical lottery data for various games at the Philippine Charity Sweepstakes Office website so we can analyze it for later.
 
 # Scraping the Data
