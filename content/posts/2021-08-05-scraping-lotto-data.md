@@ -9,6 +9,8 @@ math: false
 showtoc: true
 slug: scraping-lotto-data
 tags:
+- code
+- data science
 - probability
 - web scraping
 - data analysis
