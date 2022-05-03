@@ -2,7 +2,6 @@
 category = ["Learning"]
 date = 2021-07-17T00:00:00Z
 description = "A blog post detailing how one might go about reading a textbook effectively."
-draft = true
 math = true
 showtoc = true
 slug = "how-to-tackle-a-textbook"
