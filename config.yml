@@ -35,7 +35,7 @@ params:
   ShowShareButtons: true
   # disableSpecial1stPost: true
   ShowPostNavLinks: true
-  ShowBreadCrumbs: false
+  ShowBreadCrumbs: true
   comments: true
   hidemeta: false
   showtoc: true
@@ -130,7 +130,7 @@ params:
   #           SiteVerificationTag: "XYZabc"
 
 taxonomies:
-    category: categories
+    category: category
     tag: tags
 
 menu:
@@ -151,6 +151,9 @@ menu:
   #   name: Projects
   #   url: projects/
     weight: 4
+  - name: Categories
+    url: category/
+    weight: 8
   - name: Tags
     url: tags/
     weight: 9
