@@ -5,19 +5,16 @@ hidemeta: true
 disableShare: true
 showtoc: false
 comments: false
-summary:
-  About Je Sian Keith Herman. This section details what he does & everything else you
-  might want to know about him.
-description:
-  Who am I? Ooh, how philosophical. There's no exact answer but let's try.
+summary: About Je Sian Keith Herman. This section details what he does & everything
+  else you might want to know about him.
+description: Who am I? Ooh, how philosophical. There's no exact answer but let's try.
+
 ---
-
-
 --- 
 
 Hi there! :wave: I'm Je Sian Keith Herman (*you can call me Jesh*).
 
-I am currently a 3rd year student at [Bicol University][BU] studying [Chemical Engineering](ChE). I am also living a double life as an impostor thanks to the syndrome of the same name. I like coding and writing on the side[^1] when I have free time. My ~~brain vomit~~ [blog](/blog) is one source where you can find most of my up-to-date written content.
+I am currently a 3rd year student at [Bicol University][BU] studying [Chemical Engineering][ChE]. I am also living a double life as an impostor thanks to the syndrome of the same name. I like coding and writing on the side[^1] when I have free time. My ~~brain vomit~~ [blog](/blog) is one source where you can find most of my up-to-date written content.
 
 On an unrelated note, I like iced tea 🍹, iced coffee ☕, and ice cream 🍨 in no particular order. I also like RPGs, especially Pokémon, as well as visual novels[^2].
 
@@ -194,4 +191,3 @@ You can also message me directly via the contact form below:
   </style>
 
 </form>
-

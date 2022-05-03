@@ -95,11 +95,7 @@ fields:
   showOnly:
     value: false
   hidden: false
-- name: draft
-  type: boolean
-  label: Is Draft?
-  description: Whether a post is a draft or not
-  default: true
 pages:
 - content/posts/how-to-do-double-entry-bookkeeping-for-personal-finance.md
 - content/posts/how-to-scrape-and-prepare-pcso-lottery-data-for-analysis-in-excel.md
+- content/posts/how-to-tackle-a-textbook-a-workflow.md
