@@ -1,25 +1,27 @@
-+++
-category = ["Code", "Data Science"]
-date = 2021-08-05T00:00:00Z
-description = "In this post we will be scraping the historical lottery data for various games at the Philippine Charity Sweepstakes Office website so we can analyze it for later."
-math = false
-showtoc = true
-slug = "scraping-lottery-data"
-summary = "Scraping the Philippine Charity Sweepstakes Office website for historical lottery data of various games for later analysis."
-tags = ["code", "data science", "web scraping", "microsoft excel", "python", "selenium"]
-title = "How to Scrape and Prepare PCSO Lottery Data for Analysis in Excel"
-[cover]
-alt = "Lottery tickets (decorative)"
-caption = "Lottery tickets (decorative)"
-image = "https://res.cloudinary.com/jskherman/image/upload/v1651554590/Paper/lottery-waldemar-brandt-unsplash_csypd6.jpg"
-relative = false
+---
+category: ["Code", "Data Science"]
+date: 2021-08-05T00:00:00Z
+description: "In this post we will be scraping the historical lottery data for various games at the Philippine Charity Sweepstakes Office website so we can analyze it for later."
+math: false
+showtoc: false
+slug: "scraping-lottery-data"
+summary: "Scraping the Philippine Charity Sweepstakes Office website for historical lottery data of various games for later analysis."
+tags: ["code", "data science", "web scraping", "microsoft excel", "python", "selenium"]
+title: "How to Scrape and Prepare PCSO Lottery Data for Analysis in Excel"
+cover:
+    alt: "Lottery tickets (decorative)"
+    caption: 
+    image: "https://res.cloudinary.com/jskherman/image/upload/v1651554590/Paper/lottery-waldemar-brandt-unsplash_csypd6.jpg"
+    relative: false
+---
 
-+++
+{{< load-photoswipe >}}
+
 In this post we will be scraping the historical lottery data for various games at the Philippine Charity Sweepstakes Office website so we can analyze it for later.
 
 # Scraping the Data
 
-***
+---
 
 Let us first install the modules we're going to need for scraping the website (skip this if you already have them).
 
@@ -184,7 +186,7 @@ for row in rows:
 
 # Processing the Data
 
-***
+---
 
 ## Cleaning Up the Data with `pandas`
 
