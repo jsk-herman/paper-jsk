@@ -1,13 +1,10 @@
 ---
+title: "How to Scrape and Prepare PCSO Lottery Data for Analysis in MS Excel"
+date: 2021-08-05T00:00:00.000+00:00
+slug: scraping-lotto-data
 category:
 - Code
 - Data Science
-date: 2021-08-05T00:00:00.000+00:00
-description: In this post we will be scraping the historical lottery data at the Philippine Charity Sweepstakes Office for various games so we can analyze the probabilities for later.
-summary: Scraping the web for historical lottery data at the Philippine Charity Sweepstakes Office for various games for later analysis.
-math: false
-showtoc: true
-slug: scraping-lotto-data
 tags:
 - code
 - data science
@@ -18,22 +15,27 @@ tags:
 - python
 - selenium
 - beautiful soup
-title: "How to Scrape and Prepare PCSO Lottery Data for Analysis in MS Excel"
+summary: Scraping the web for historical lottery data at the Philippine Charity Sweepstakes Office for various games for later analysis.
+description: In this post we will be scraping the historical lottery data at the Philippine Charity Sweepstakes Office for various games so we can analyze the probabilities for later.
 cover:
   alt: "Lottery tickets (decorative)"
   caption: ''
   image: https://res.cloudinary.com/jskherman/image/upload/v1651554590/Paper/lottery-waldemar-brandt-unsplash_csypd6.jpg
   relative: false
+math: false
+showtoc: true
 draft: false
 
 ---
+
+{{< load-photoswipe >}}
 
 In this post we will be scraping the historical lottery data at the Philippine
 Charity Sweepstakes Office so we can analyze it for later. Let's get started.
 
 # Scraping the Data
 
-***
+---
 
 Let us first install the modules we're going to need for scraping the website (skip this if you already have them).
 
