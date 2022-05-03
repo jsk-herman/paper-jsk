@@ -52,7 +52,7 @@ Now onto dealing with the specifics of studying. To instill the daily habit of l
 
 ## Note-taking
 
-In taking notes it is important that we do not just read passively or highlight things. What I suggest doing is to use the benefits of recall (like what we did with flashcards earlier) to our advantage. We can do this by using a slightly modified [Cornell note-taking method](https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/).\[^1\] During a lecture or when reading a textbook chapter, we only take brief notes on important ideas so that we are more focused only on understanding what is currently in front of us instead of wasting our precious working memory space with miscellaneous tasks like formatting our notes or plain copy-pasta.
+In taking notes it is important that we do not just read passively or highlight things. What I suggest doing is to use the benefits of recall (like what we did with flashcards earlier) to our advantage. We can do this by using a slightly modified [Cornell note-taking method](https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/).[^1] During a lecture or when reading a textbook chapter, we only take brief notes on important ideas so that we are more focused only on understanding what is currently in front of us instead of wasting our precious working memory space with miscellaneous tasks like formatting our notes or plain copy-pasta.
 
 It goes like this... If you have a part with concepts that says something like:
 
@@ -99,4 +99,4 @@ This may all seem great, but Anki may not help you much in problem-solving, espe
 
 Undertaking a huge project such as reading a full textbook on a subject can be daunting. However, if you can break it down into simpler tasks and use all of what you have at your disposal to increase our chances then it might not be so daunting, after all. You just need to do a little work each day to learn. And, in this post you got a glimpse of how you could tackle any textbook on a subject or even others without a textbook.
 
-\[^1\]: Pauk, Walter; Owens, Ross J. Q. (2010). How to Study in College (10 ed.). Boston, MA: Wadsworth. ISBN 978-1-4390-8446-5. Chapter 10: "The Cornell System: Take Effective Notes", pp. 235-277
+[^1]: Pauk, Walter; Owens, Ross J. Q. (2010). How to Study in College (10 ed.). Boston, MA: Wadsworth. ISBN 978-1-4390-8446-5. Chapter 10: "The Cornell System: Take Effective Notes", pp. 235-277
