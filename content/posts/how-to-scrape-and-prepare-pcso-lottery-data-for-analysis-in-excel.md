@@ -10,7 +10,7 @@ tags = ["code", "data science", "web scraping", "microsoft excel", "python", "se
 title = "How to Scrape and Prepare PCSO Lottery Data for Analysis in Excel"
 [cover]
 alt = "Lottery tickets (decorative)"
-caption = ""
+caption = "Lottery tickets (decorative)"
 image = "https://res.cloudinary.com/jskherman/image/upload/v1651554590/Paper/lottery-waldemar-brandt-unsplash_csypd6.jpg"
 relative = false
 
