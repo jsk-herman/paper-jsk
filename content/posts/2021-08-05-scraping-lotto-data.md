@@ -105,7 +105,7 @@ Now that the wait is over let us now proceed to entering our parameters in the A
 
 Tip: To inspect the dropdown menu, right-click on it and navigate to "Developer Tools" and select "Inspect" (or press `F12`). We then get the value inside of the `id` parameter.
 
-{{< figure src="https://res.cloudinary.com/jskherman/image/upload/v1651553052/Paper/search-lotto_lble83.png" caption="The Search Lotto Form" >}}
+{{< figure src="https://res.cloudinary.com/jskherman/image/upload/v1651553052/Paper/search-lotto_lble83.png" alt="The Search Lotto Form" >}}
 
 We want the end date to be today to get the latest data from all the games and the start date to be the earliest possible option which is `January 1, 2011` in the dropdown menu. As for the lotto game we want all games. We will just split the data up later into smaller dataframes using pandas for each lotto game, so that we only need to scrape the website every time we want to update our data. But first get today's date which will be used later.
 
