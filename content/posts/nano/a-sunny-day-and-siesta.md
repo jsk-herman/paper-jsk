@@ -10,3 +10,4 @@ tags = []
 title = "A Sunny Day and Siesta"
 
 +++
+Sometimes, we get those days where you have those small blocks of time of
