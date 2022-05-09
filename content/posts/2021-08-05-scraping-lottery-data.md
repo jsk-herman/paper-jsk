@@ -95,7 +95,7 @@ Tip: To inspect the dropdown menu, right-click on it and navigate to "Developer 
 
 {{< figure src="https://res.cloudinary.com/jskherman/image/upload/v1651553052/Paper/search-lotto_lble83.png" alt="The Search Lotto Form" >}}
 
-We want the end date to be today to get the latest data from all the games and the start date to be the earliest possible option which is `January 1, 2011` in the dropdown menu. As for the lotto game we want all games. We will just split the data up later into smaller dataframes using pandas for each lotto game, so that we only need to scrape the website every time we want to update our data. But first get today's date which will be used later.
+We want the end date to be today to get the latest data from all the games and the start date to be the earliest possible option which is `January 1, 2012` in the dropdown menu. As for the lotto game we want all games. We will just split the data up later into smaller dataframes using pandas for each lotto game, so that we only need to scrape the website every time we want to update our data. But first get today's date which will be used later.
 
 ``` python
 # Get today's date with the datetime import
@@ -116,7 +116,7 @@ print("Today is " + td_month + " " + td_day + ", " + td_year + ".\n")
 Now let's have Selenium and the webdriver find the elements of the form and select the parameters we want in the form options.
 
 ``` python
-# Select Start Date as January 1, 2011
+# Select Start Date as January 1, 2012
 start_month = Select(driver.find_element_by_id(
     "cphContainer_cpContent_ddlStartMonth"))
 start_month.select_by_value("January")
