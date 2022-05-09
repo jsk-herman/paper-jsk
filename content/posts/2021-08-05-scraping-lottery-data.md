@@ -1,13 +1,14 @@
 ---
-category: ["Code", "Data Science"]
+title: "How to Scrape and Prepare PCSO Lottery Data for Analysis in Excel"
+category: ["Data Science", "Code"]
 date: 2021-08-05T00:00:00Z
+lastmod: 2022-05-09T00:00:00Z
 description: "In this post we will be scraping the historical lottery data for various games at the Philippine Charity Sweepstakes Office website so we can analyze it for later."
 math: false
-showtoc: false
+showtoc: true
 slug: "scraping-lottery-data"
 summary: "Scraping the Philippine Charity Sweepstakes Office website for historical lottery data of various games for later analysis."
 tags: ["code", "data science", "web scraping", "microsoft excel", "python", "selenium"]
-title: "How to Scrape and Prepare PCSO Lottery Data for Analysis in Excel"
 cover:
     alt: "Lottery tickets (decorative)"
     caption: 
@@ -21,17 +22,17 @@ In this post we will be scraping the historical lottery data for various games a
 
 # Scraping the Data
 
----
+------------------------------------------------------------------------
 
 Let us first install the modules we're going to need for scraping the website (skip this if you already have them).
 
-```python
+``` python
 python -m pip install selenium beautifulsoup4 pandas
 ```
 
 And then import them for our project:
 
-```python
+``` python
 # Selenium for simulating clicks in a browser
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
@@ -57,9 +58,9 @@ For simulating clicks in a web broswer, we are going to use `selenium`. We're al
 
 Now set the path to where the webdriver executuble is as well as the url to the lottery data is located.
 
-```python
+``` python
 # Set the path to where the webdriver executuble is
-path = ("C:\\Users\\Username\\AppData\\Local\\Programs\\Python" +
+path = ("C:\\Users\\<Username> Herman\\AppData\\Local\\Programs\\Python" +
          "\\Python39\\Scripts\\msedgedriver.exe")
 
 # Designate the url to be scraped to a variable
@@ -68,7 +69,7 @@ url = "https://www.pcso.gov.ph/SearchLottoResult.aspx"
 
 Now initialize a Selenium session by directing it to the webdriver executable.
 
-```python
+``` python
 # Initialize the Edge webdriver
 driver = webdriver.Edge(executable_path=path) 
 
@@ -78,7 +79,7 @@ driver.get(url)
 
 One problem with the page though is that if you inspect the page's source there is class called `pre-con` in a div. If you would try to just have the driver proceed without waiting for a few seconds some of the buttons are unclickable and blocked by this div container, so we have to tell the WebDriver to wait for a set amount of time. I discovered this after a while of troubleshooting why the selenium cannot give any input to the web form.
 
-```python
+``` python
 # Designate a variable for waiting for the page to load
 wait = WebDriverWait(driver, 5)
 
@@ -86,9 +87,9 @@ wait = WebDriverWait(driver, 5)
 wait.until(ec.invisibility_of_element_located((By.CLASS_NAME, "pre-con")))
 ```
 
-    [OUT]: <selenium.webdriver.remote.webelement.WebElement (session="015fdb2412698f1c41acf19483c5876b", element="61b7bbb7-635f-4944-bfb9-10f69d75009d")>
+    [OUT]: <selenium.webdriver.remote.webelement.WebElement (session="fb056d28fee8b152833d3ed6d8827c99", element="a7ca8ad3-7f46-47c8-8b8b-1b80414f1e51")>
 
-Now that the wait is over let us now proceed to entering our parameters in the ASP.NET web form (the form with filters we see if we visit the web page) for the data we need. We are going to do that by using  the `.find_element_by_id` method here for the options because we know their `id`s by inspecting the page's source at the place where the dropdown menus are.
+Now that the wait is over let us now proceed to entering our parameters in the ASP.NET web form (the form with filters we see if we visit the web page) for the data we need. We are going to do that by using the `.find_element_by_id` method here for the options because we know their `id`s by inspecting the page's source at the place where the dropdown menus are.
 
 Tip: To inspect the dropdown menu, right-click on it and navigate to "Developer Tools" and select "Inspect" (or press `F12`). We then get the value inside of the `id` parameter.
 
@@ -96,7 +97,7 @@ Tip: To inspect the dropdown menu, right-click on it and navigate to "Developer 
 
 We want the end date to be today to get the latest data from all the games and the start date to be the earliest possible option which is `January 1, 2011` in the dropdown menu. As for the lotto game we want all games. We will just split the data up later into smaller dataframes using pandas for each lotto game, so that we only need to scrape the website every time we want to update our data. But first get today's date which will be used later.
 
-```python
+``` python
 # Get today's date with the datetime import
 today = date.today()
 
@@ -105,14 +106,16 @@ td_year = today.strftime("%Y")
 td_month = today.strftime("%B")
 td_day = today.strftime("%d").lstrip("0").replace(" 0", " ")
 
+startyr = int(td_year) - 10
+startyr = str(startyr)
 print("Today is " + td_month + " " + td_day + ", " + td_year + ".\n")
 ```
 
-    [OUT]: Today is August 5, 2021.
+    [OUT]: Today is May 9, 2022.
 
 Now let's have Selenium and the webdriver find the elements of the form and select the parameters we want in the form options.
 
-```python
+``` python
 # Select Start Date as January 1, 2011
 start_month = Select(driver.find_element_by_id(
     "cphContainer_cpContent_ddlStartMonth"))
@@ -124,7 +127,7 @@ start_day.select_by_value("1")
 
 start_year = Select(driver.find_element_by_id(
     "cphContainer_cpContent_ddlStartYear"))
-start_year.select_by_value("2011")
+start_year.select_by_value(startyr)
 
 # Select End Date as Today
 end_month = Select(driver.find_element_by_id(
@@ -156,7 +159,7 @@ Now it's time to scrape the data from the current page's session with `Beautiful
 
 Firstly, feed the page's source code into Beautiful Soup and then have it find our results by `id`. Inspect the source again) and get all the table's rows by their attributes such as `class`.
 
-```python
+``` python
 # Feed the page's source code into Beautiful Soup
 doc = BeautifulSoup(driver.page_source, "html.parser")
 
@@ -167,7 +170,7 @@ rows = doc.find('table', id='cphContainer_cpContent_GridView1').find_all(
 
 Now time to put the data in a python list/dictionary.
 
-```python
+``` python
 # Initialize a list to hold our data
 entries = []
 
@@ -186,13 +189,13 @@ for row in rows:
 
 # Processing the Data
 
----
+------------------------------------------------------------------------
 
 ## Cleaning Up the Data with `pandas`
 
-Now that we have the data in a list, it is now time to put it in a `pandas` dataframe and clean it up. There are duplicates in the data if you examine it closely so we have to remove those. We also need to get the data into the proper data types to make it easier for us to process down the line (i.e. sanitization).
+Now that we have the data in a list, it is now time to put it in a `pandas` dataframe and clean it up. There are duplicates in the data if you examine it closely so we have to remove those. We also need to get the data into the proper data types to make it easier for us to process down the line (i.e. sanitization).
 
-```python
+``` python
 # Turn the list into a dataframe
 df = pd.DataFrame(entries)
 
@@ -205,7 +208,7 @@ df = df[df["Combination"] != "-                "]
 
 The part `df = df[df["Combination"] != "- "]` above is to look for and remove entries that do not have a combination. I also found this after hours of figuring out why I cannot do certain operations on the data like converting them into the proper data types. Speaking of data types, let's go convert the data now.
 
-```python
+``` python
 # Convert the dates to datetime type
 df["Date"] = df["Date"].astype('datetime64[ns]')
 
@@ -219,128 +222,127 @@ df["Winners"] = df["Winners"].astype(int)
 
 Now let's look at our data so far:
 
-```python
+``` python
 df
 ```
 
 <div>
 <style scoped>
-.dataframe tbody tr th:only-of-type {
-vertical-align: middle;
-}
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
     .dataframe tbody tr th {
         vertical-align: top;
     }
-    
+
     .dataframe thead th {
         text-align: right;
     }
-
 </style>
 <table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Game</th>
-<th>Combination</th>
-<th>Date</th>
-<th>Prize</th>
-<th>Winners</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>Megalotto 6/45</td>
-<td>42-34-24-02-38-23</td>
-<td>2021-08-04</td>
-<td>11114277.8</td>
-<td>0</td>
-</tr>
-<tr>
-<th>1</th>
-<td>Suertres Lotto 11AM</td>
-<td>9-1-4</td>
-<td>2021-08-04</td>
-<td>4500.0</td>
-<td>279</td>
-</tr>
-<tr>
-<th>2</th>
-<td>Suertres Lotto 9PM</td>
-<td>0-5-5</td>
-<td>2021-08-04</td>
-<td>4500.0</td>
-<td>154</td>
-</tr>
-<tr>
-<th>3</th>
-<td>EZ2 Lotto 4PM</td>
-<td>18-18</td>
-<td>2021-08-04</td>
-<td>4000.0</td>
-<td>281</td>
-</tr>
-<tr>
-<th>4</th>
-<td>Ultra Lotto 6/58</td>
-<td>54-03-40-36-53-34</td>
-<td>2021-08-03</td>
-<td>53105608.0</td>
-<td>0</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>16448</th>
-<td>EZ2 Lotto 4PM</td>
-<td>22-22</td>
-<td>2011-01-03</td>
-<td>4000.0</td>
-<td>123</td>
-</tr>
-<tr>
-<th>16449</th>
-<td>Superlotto 6/49</td>
-<td>16-17-41-31-19-03</td>
-<td>2011-01-02</td>
-<td>55184738.4</td>
-<td>0</td>
-</tr>
-<tr>
-<th>16450</th>
-<td>Suertres Lotto 4PM</td>
-<td>4-7-1</td>
-<td>2011-01-02</td>
-<td>4500.0</td>
-<td>234</td>
-</tr>
-<tr>
-<th>16451</th>
-<td>EZ2 Lotto 9PM</td>
-<td>23-31</td>
-<td>2011-01-02</td>
-<td>4000.0</td>
-<td>193</td>
-</tr>
-<tr>
-<th>16452</th>
-<td>EZ2 Lotto 11AM</td>
-<td>09-04</td>
-<td>2011-01-02</td>
-<td>4000.0</td>
-<td>112</td>
-</tr>
-</tbody>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Game</th>
+      <th>Combination</th>
+      <th>Date</th>
+      <th>Prize</th>
+      <th>Winners</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Superlotto 6/49</td>
+      <td>18-24-04-26-47-36</td>
+      <td>2022-05-08</td>
+      <td>67522822.8</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Suertres Lotto 4PM</td>
+      <td>1-3-9</td>
+      <td>2022-05-08</td>
+      <td>4500.0</td>
+      <td>279</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>EZ2 Lotto 11AM</td>
+      <td>08-04</td>
+      <td>2022-05-08</td>
+      <td>4000.0</td>
+      <td>251</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>EZ2 Lotto 9PM</td>
+      <td>07-04</td>
+      <td>2022-05-08</td>
+      <td>4000.0</td>
+      <td>784</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Lotto 6/42</td>
+      <td>14-24-08-16-22-37</td>
+      <td>2022-05-07</td>
+      <td>6051682.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>15880</th>
+      <td>4D Vismin</td>
+      <td>0-6-3-3</td>
+      <td>2012-01-02</td>
+      <td>40672.0</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>15881</th>
+      <td>Suertres Lotto 4PM</td>
+      <td>3-9-3</td>
+      <td>2012-01-02</td>
+      <td>4500.0</td>
+      <td>256</td>
+    </tr>
+    <tr>
+      <th>15882</th>
+      <td>EZ2 Lotto 9PM</td>
+      <td>03-13</td>
+      <td>2012-01-02</td>
+      <td>4000.0</td>
+      <td>540</td>
+    </tr>
+    <tr>
+      <th>15883</th>
+      <td>EZ2 Lotto 11AM</td>
+      <td>31-24</td>
+      <td>2012-01-02</td>
+      <td>4000.0</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>15884</th>
+      <td>Grand Lotto 6/55</td>
+      <td>44-14-51-52-39-08</td>
+      <td>2012-01-02</td>
+      <td>71768080.8</td>
+      <td>0</td>
+    </tr>
+  </tbody>
 </table>
-<p>16445 rows × 5 columns</p>
+<p>15878 rows × 5 columns</p>
 </div>
 
 ## Saving the data to an MS Excel workbook
@@ -349,7 +351,7 @@ So far it's looking good. Since we're now here it's time for us to split this hu
 
 After doing that, let's save that into an Excel workbook so that we do not have to scrape every time we want to analyze the data.
 
-```python
+``` python
 # Sort the dataframe by game
 df.sort_values(by=["Game"], inplace=True)
 
@@ -381,84 +383,83 @@ lotto_2dc = df.loc[df["Game"]=="EZ2 Lotto 9PM"].copy()
 
 Let's look at one of the dataframes:
 
-```python
+``` python
 lotto_2da.tail()
 ```
 
 <div>
 <style scoped>
-.dataframe tbody tr th:only-of-type {
-vertical-align: middle;
-}
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
     .dataframe tbody tr th {
         vertical-align: top;
     }
-    
+
     .dataframe thead th {
         text-align: right;
     }
-
 </style>
 <table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Game</th>
-<th>Combination</th>
-<th>Date</th>
-<th>Prize</th>
-<th>Winners</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>417</th>
-<td>EZ2 Lotto 11AM</td>
-<td>10-05</td>
-<td>2021-05-04</td>
-<td>4000.0</td>
-<td>23</td>
-</tr>
-<tr>
-<th>15982</th>
-<td>EZ2 Lotto 11AM</td>
-<td>13-21</td>
-<td>2011-04-06</td>
-<td>4000.0</td>
-<td>62</td>
-</tr>
-<tr>
-<th>376</th>
-<td>EZ2 Lotto 11AM</td>
-<td>03-16</td>
-<td>2021-05-13</td>
-<td>4000.0</td>
-<td>46</td>
-</tr>
-<tr>
-<th>15977</th>
-<td>EZ2 Lotto 11AM</td>
-<td>25-25</td>
-<td>2011-04-07</td>
-<td>4000.0</td>
-<td>164</td>
-</tr>
-<tr>
-<th>14469</th>
-<td>EZ2 Lotto 11AM</td>
-<td>09-24</td>
-<td>2012-02-08</td>
-<td>4000.0</td>
-<td>186</td>
-</tr>
-</tbody>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Game</th>
+      <th>Combination</th>
+      <th>Date</th>
+      <th>Prize</th>
+      <th>Winners</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11555</th>
+      <td>EZ2 Lotto 11AM</td>
+      <td>29-28</td>
+      <td>2014-09-24</td>
+      <td>4000.0</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>15533</th>
+      <td>EZ2 Lotto 11AM</td>
+      <td>27-16</td>
+      <td>2012-03-12</td>
+      <td>4000.0</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>15563</th>
+      <td>EZ2 Lotto 11AM</td>
+      <td>03-08</td>
+      <td>2012-03-06</td>
+      <td>4000.0</td>
+      <td>206</td>
+    </tr>
+    <tr>
+      <th>9533</th>
+      <td>EZ2 Lotto 11AM</td>
+      <td>24-30</td>
+      <td>2016-01-06</td>
+      <td>4000.0</td>
+      <td>121</td>
+    </tr>
+    <tr>
+      <th>2394</th>
+      <td>EZ2 Lotto 11AM</td>
+      <td>27-08</td>
+      <td>2020-11-07</td>
+      <td>4000.0</td>
+      <td>127</td>
+    </tr>
+  </tbody>
 </table>
 </div>
 
 For the Suertres Lotto and EZ2 Lotto games the games are split into 11:00 AM, 4:00 PM, and 9:00 PM games. Let's fix that by assigning them the proper datetime values in the Date column and combining them into bigger dataframes
 
-```python
+``` python
 # Add 11 hours to the datetime for Suertres Lotto 11AM game to match because of timezones
 lotto_3da["Date"] = lotto_3da["Date"] + timedelta(hours=11)
 
@@ -479,7 +480,7 @@ lotto_3d = lotto_3d.append(lotto_3db)
 lotto_3d = lotto_3d.append(lotto_3dc)
 ```
 
-```python
+``` python
 # Do the same for EZ2 Lotto
 lotto_2da["Date"] = lotto_2da["Date"] + timedelta(hours=11)
 lotto_2db["Date"] = lotto_2db["Date"] + timedelta(hours=16)
@@ -498,259 +499,257 @@ lotto_2d = lotto_2d.append(lotto_2dc)
 
 Now let's look at one of them again to see if we were successful:
 
-```python
+``` python
 lotto_2da
 ```
 
 <div>
 <style scoped>
-.dataframe tbody tr th:only-of-type {
-vertical-align: middle;
-}
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
     .dataframe tbody tr th {
         vertical-align: top;
     }
-    
+
     .dataframe thead th {
         text-align: right;
     }
-
 </style>
 <table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Game</th>
-<th>Combination</th>
-<th>Date</th>
-<th>Prize</th>
-<th>Winners</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>6754</th>
-<td>EZ2 Lotto</td>
-<td>13-03</td>
-<td>2016-12-26 11:00:00</td>
-<td>4000.0</td>
-<td>132</td>
-</tr>
-<tr>
-<th>8012</th>
-<td>EZ2 Lotto</td>
-<td>30-15</td>
-<td>2016-03-12 11:00:00</td>
-<td>4000.0</td>
-<td>222</td>
-</tr>
-<tr>
-<th>3705</th>
-<td>EZ2 Lotto</td>
-<td>04-09</td>
-<td>2018-11-15 11:00:00</td>
-<td>4000.0</td>
-<td>287</td>
-</tr>
-<tr>
-<th>12388</th>
-<td>EZ2 Lotto</td>
-<td>30-27</td>
-<td>2013-05-25 11:00:00</td>
-<td>4000.0</td>
-<td>102</td>
-</tr>
-<tr>
-<th>12127</th>
-<td>EZ2 Lotto</td>
-<td>18-10</td>
-<td>2013-07-25 11:00:00</td>
-<td>4000.0</td>
-<td>95</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>417</th>
-<td>EZ2 Lotto</td>
-<td>10-05</td>
-<td>2021-05-04 11:00:00</td>
-<td>4000.0</td>
-<td>23</td>
-</tr>
-<tr>
-<th>15982</th>
-<td>EZ2 Lotto</td>
-<td>13-21</td>
-<td>2011-04-06 11:00:00</td>
-<td>4000.0</td>
-<td>62</td>
-</tr>
-<tr>
-<th>376</th>
-<td>EZ2 Lotto</td>
-<td>03-16</td>
-<td>2021-05-13 11:00:00</td>
-<td>4000.0</td>
-<td>46</td>
-</tr>
-<tr>
-<th>15977</th>
-<td>EZ2 Lotto</td>
-<td>25-25</td>
-<td>2011-04-07 11:00:00</td>
-<td>4000.0</td>
-<td>164</td>
-</tr>
-<tr>
-<th>14469</th>
-<td>EZ2 Lotto</td>
-<td>09-24</td>
-<td>2012-02-08 11:00:00</td>
-<td>4000.0</td>
-<td>186</td>
-</tr>
-</tbody>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Game</th>
+      <th>Combination</th>
+      <th>Date</th>
+      <th>Prize</th>
+      <th>Winners</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2877</th>
+      <td>EZ2 Lotto</td>
+      <td>25-06</td>
+      <td>2020-02-21 11:00:00</td>
+      <td>4000.0</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>3858</th>
+      <td>EZ2 Lotto</td>
+      <td>05-06</td>
+      <td>2019-07-18 11:00:00</td>
+      <td>4000.0</td>
+      <td>164</td>
+    </tr>
+    <tr>
+      <th>7987</th>
+      <td>EZ2 Lotto</td>
+      <td>30-25</td>
+      <td>2016-12-24 11:00:00</td>
+      <td>4000.0</td>
+      <td>223</td>
+    </tr>
+    <tr>
+      <th>3876</th>
+      <td>EZ2 Lotto</td>
+      <td>29-29</td>
+      <td>2019-07-14 11:00:00</td>
+      <td>4000.0</td>
+      <td>231</td>
+    </tr>
+    <tr>
+      <th>14423</th>
+      <td>EZ2 Lotto</td>
+      <td>19-25</td>
+      <td>2012-11-12 11:00:00</td>
+      <td>4000.0</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>11555</th>
+      <td>EZ2 Lotto</td>
+      <td>29-28</td>
+      <td>2014-09-24 11:00:00</td>
+      <td>4000.0</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>15533</th>
+      <td>EZ2 Lotto</td>
+      <td>27-16</td>
+      <td>2012-03-12 11:00:00</td>
+      <td>4000.0</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>15563</th>
+      <td>EZ2 Lotto</td>
+      <td>03-08</td>
+      <td>2012-03-06 11:00:00</td>
+      <td>4000.0</td>
+      <td>206</td>
+    </tr>
+    <tr>
+      <th>9533</th>
+      <td>EZ2 Lotto</td>
+      <td>24-30</td>
+      <td>2016-01-06 11:00:00</td>
+      <td>4000.0</td>
+      <td>121</td>
+    </tr>
+    <tr>
+      <th>2394</th>
+      <td>EZ2 Lotto</td>
+      <td>27-08</td>
+      <td>2020-11-07 11:00:00</td>
+      <td>4000.0</td>
+      <td>127</td>
+    </tr>
+  </tbody>
 </table>
-<p>1820 rows × 5 columns</p>
+<p>1815 rows × 5 columns</p>
 </div>
 
 Let's see also one of the combined dataframes:
 
-```python
+``` python
 lotto_2d
 ```
 
 <div>
 <style scoped>
-.dataframe tbody tr th:only-of-type {
-vertical-align: middle;
-}
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
     .dataframe tbody tr th {
         vertical-align: top;
     }
-    
+
     .dataframe thead th {
         text-align: right;
     }
-
 </style>
 <table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Game</th>
-<th>Combination</th>
-<th>Date</th>
-<th>Prize</th>
-<th>Winners</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>6754</th>
-<td>EZ2 Lotto</td>
-<td>13-03</td>
-<td>2016-12-26 11:00:00</td>
-<td>4000.0</td>
-<td>132</td>
-</tr>
-<tr>
-<th>8012</th>
-<td>EZ2 Lotto</td>
-<td>30-15</td>
-<td>2016-03-12 11:00:00</td>
-<td>4000.0</td>
-<td>222</td>
-</tr>
-<tr>
-<th>3705</th>
-<td>EZ2 Lotto</td>
-<td>04-09</td>
-<td>2018-11-15 11:00:00</td>
-<td>4000.0</td>
-<td>287</td>
-</tr>
-<tr>
-<th>12388</th>
-<td>EZ2 Lotto</td>
-<td>30-27</td>
-<td>2013-05-25 11:00:00</td>
-<td>4000.0</td>
-<td>102</td>
-</tr>
-<tr>
-<th>12127</th>
-<td>EZ2 Lotto</td>
-<td>18-10</td>
-<td>2013-07-25 11:00:00</td>
-<td>4000.0</td>
-<td>95</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>10206</th>
-<td>EZ2 Lotto</td>
-<td>26-06</td>
-<td>2014-10-22 21:00:00</td>
-<td>4000.0</td>
-<td>332</td>
-</tr>
-<tr>
-<th>15245</th>
-<td>EZ2 Lotto</td>
-<td>29-01</td>
-<td>2011-09-04 21:00:00</td>
-<td>4000.0</td>
-<td>86</td>
-</tr>
-<tr>
-<th>10326</th>
-<td>EZ2 Lotto</td>
-<td>02-14</td>
-<td>2014-09-24 21:00:00</td>
-<td>4000.0</td>
-<td>666</td>
-</tr>
-<tr>
-<th>14238</th>
-<td>EZ2 Lotto</td>
-<td>09-24</td>
-<td>2012-03-25 21:00:00</td>
-<td>4000.0</td>
-<td>476</td>
-</tr>
-<tr>
-<th>10035</th>
-<td>EZ2 Lotto</td>
-<td>09-24</td>
-<td>2014-12-01 21:00:00</td>
-<td>4000.0</td>
-<td>586</td>
-</tr>
-</tbody>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Game</th>
+      <th>Combination</th>
+      <th>Date</th>
+      <th>Prize</th>
+      <th>Winners</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2877</th>
+      <td>EZ2 Lotto</td>
+      <td>25-06</td>
+      <td>2020-02-21 11:00:00</td>
+      <td>4000.0</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>3858</th>
+      <td>EZ2 Lotto</td>
+      <td>05-06</td>
+      <td>2019-07-18 11:00:00</td>
+      <td>4000.0</td>
+      <td>164</td>
+    </tr>
+    <tr>
+      <th>7987</th>
+      <td>EZ2 Lotto</td>
+      <td>30-25</td>
+      <td>2016-12-24 11:00:00</td>
+      <td>4000.0</td>
+      <td>223</td>
+    </tr>
+    <tr>
+      <th>3876</th>
+      <td>EZ2 Lotto</td>
+      <td>29-29</td>
+      <td>2019-07-14 11:00:00</td>
+      <td>4000.0</td>
+      <td>231</td>
+    </tr>
+    <tr>
+      <th>14423</th>
+      <td>EZ2 Lotto</td>
+      <td>19-25</td>
+      <td>2012-11-12 11:00:00</td>
+      <td>4000.0</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4686</th>
+      <td>EZ2 Lotto</td>
+      <td>16-27</td>
+      <td>2019-01-11 21:00:00</td>
+      <td>4000.0</td>
+      <td>402</td>
+    </tr>
+    <tr>
+      <th>4681</th>
+      <td>EZ2 Lotto</td>
+      <td>15-08</td>
+      <td>2019-01-12 21:00:00</td>
+      <td>4000.0</td>
+      <td>249</td>
+    </tr>
+    <tr>
+      <th>12361</th>
+      <td>EZ2 Lotto</td>
+      <td>16-29</td>
+      <td>2014-03-16 21:00:00</td>
+      <td>4000.0</td>
+      <td>530</td>
+    </tr>
+    <tr>
+      <th>4695</th>
+      <td>EZ2 Lotto</td>
+      <td>06-20</td>
+      <td>2019-01-09 21:00:00</td>
+      <td>4000.0</td>
+      <td>335</td>
+    </tr>
+    <tr>
+      <th>4290</th>
+      <td>EZ2 Lotto</td>
+      <td>01-20</td>
+      <td>2019-04-09 21:00:00</td>
+      <td>4000.0</td>
+      <td>339</td>
+    </tr>
+  </tbody>
 </table>
-<p>5567 rows × 5 columns</p>
+<p>5334 rows × 5 columns</p>
 </div>
 
 So far so good. The final stretch here is going to be to save our data to Microsoft Excel and we can achieve that easily with `pandas` with `pandas.DataFrame.to_excel`.
 
-```python
+``` python
 # Create Excel writer object
 writer = pd.ExcelWriter("lotto.xlsx")
 
@@ -773,4 +772,4 @@ writer.save()
 
 # Conclusion
 
-With that we have saved an Excel file named `lotto.xlsx` where all of our scraped data have been put in. Now let's proceed to making the scripts for analysing the Lotto data. For example, we might look at the frequency of combinations, how frequent some numbers appear compared to others, or the expectancy value is for each drawing date in part two.
+With that we have saved an Excel file named `lotto.xlsx` where all of our scraped data have been put in. Now let's proceed to making the scripts for analyzing the Lotto data. For example, we might look at the frequency of combinations, how frequent some numbers appear compared to others, or the expectancy value is for each drawing date in part two.
