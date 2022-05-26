@@ -92,8 +92,14 @@ params:
     url: https://github.com/jskherman
   - name: LinkedIn
     url: https://www.linkedin.com/in/jskherman/
+  - name: Email
+    url: https://orcid.org/0000-0002-3281-1292
+  - name: KoFi
+    url: https://ko-fi.com/jskherman
   - name: Visual Novel Database
     url: https://vndb.org/u216922
+  - name: "RSS"
+    url: index.xml
   # - name: Highlights
   #   url: https://glasp.co/#/jskherman
   # - name: medium
@@ -102,14 +108,10 @@ params:
   #   url: https://www.instagram.com/jarmos.san/
   # - name: facebook
   #   url: https://www.facebook.com/jarmos.san/
-  # - name: email
-  #   url: mailto:hello@example.com
   # - name: BuyMeACoffee
   #   url: https://www.buymeacoffee.com/jsk_herman
-  - name: KoFi
-    url: https://ko-fi.com/jskherman
-  - name: "RSS"
-    url: index.xml
+  
+
     
   cover:
     hidden: true
